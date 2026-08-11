@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holirentals | Premium Vacation Rental Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #e8e8e8;
+      background: #0d0d0d;
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100px;
+    }
+    .logo { height: 92px; width: auto; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.25s ease;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+    nav a:hover, nav a.active { color: #D4AF37; }
+    .lang-switch { display: flex; gap: 8px; margin-left: 8px; }
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 5px 11px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: #D4AF37;
+      border-color: #D4AF37;
+      color: #0d0d0d;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      color: #fff;
+      margin-bottom: 18px;
+      line-height: 1.2;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    .hero-content p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: #D4AF37;
+      color: #0d0d0d;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn:hover { background: #c9a227; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #D4AF37;
+      color: #D4AF37;
+      margin-left: 12px;
+    }
+    .btn-outline:hover { background: #D4AF37; color: #0d0d0d; }
+    section { padding: 90px 0; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #D4AF37;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #999;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+    }
+    .benefits { background: #111; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .benefit-card {
+      border-radius: 8px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); }
+    .benefit-card:nth-child(1) {
+      background: #d6eaf8;
+      border: 1px solid #a9cce3;
+      color: #1a1a1a;
+    }
+    .benefit-card:nth-child(2) {
+      background: #f5e6e8;
+      border: 1px solid #e8c5cb;
+      color: #1a1a1a;
+    }
+    .benefit-card:nth-child(3) {
+      background: #f5f0e6;
+      border: 1px solid #e0d5c0;
+      color: #1a1a1a;
+    }
+    .benefit-card:nth-child(4) {
+      background: #d0d0d0;
+      border: 1px solid #b0b0b0;
+      color: #1a1a1a;
+    }
+    .benefit-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #1a1a1a;
+      font-weight: 600;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .benefit-title {
+      font-size: 1.15rem;
+      color: #1a1a1a;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .benefit-text {
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.5;
+    }
+    .destinations { background: #111; }
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .dest-card {
+      position: relative;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #1a1a1a;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .dest-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .dest-card:hover img { transform: scale(1.05); }
+    .dest-name {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px 22px;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .modalities { background: #0d0d0d; }
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .mod-card {
+      border-radius: 8px;
+      padding: 36px 28px;
+      text-align: center;
+    }
+    .mod-card.basic {
+      background: #d6eaf8;
+      border: 1px solid #a9cce3;
+      color: #1a1a1a;
+    }
+    .mod-card.standard {
+      background: #f5e6e8;
+      border: 1px solid #e8c5cb;
+      color: #1a1a1a;
+    }
+    .mod-card.premium {
+      background: #2c2c2c;
+      border: 1px solid #D4AF37;
+      color: #e8e8e8;
+    }
+    .mod-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .mod-card.basic h3, .mod-card.standard h3 { color: #1a1a1a; }
+    .mod-card.premium h3 { color: #D4AF37; }
+    .mod-card .price { font-size: 0.9rem; margin-bottom: 22px; }
+    .mod-card.basic .price, .mod-card.standard .price { color: #555; }
+    .mod-card.premium .price { color: #aaa; }
+    .mod-card ul {
+      list-style: none;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .mod-card.basic ul, .mod-card.standard ul { color: #333; }
+    .mod-card.premium ul { color: #ccc; }
+    .mod-card ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .mod-card.premium ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mod-card ul li:last-child { border-bottom: none; }
+    .apartments { background: #111; }
+    .apt-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .apt-card {
+      background: #161616;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.12);
+    }
+    .apt-photo {
+      height: 210px;
+      background: #1a1a1a;
+    }
+    .apt-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .apt-info { padding: 22px; }
+    .apt-info h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .apt-info p { color: #999; font-size: 0.95rem; }
+    .services { background: #0d0d0d; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+    .service-card {
+      text-align: center;
+      padding: 26px 14px;
+      background: #161616;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 14px;
+      stroke: #D4AF37;
+      fill: none;
+      stroke-width: 1.5;
+    }
+    .service-card h3 {
+      font-size: 0.98rem;
+      color: #fff;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .service-card p {
+      color: #999;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .contact { background: #111; text-align: center; }
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-item span { color: #888; font-size: 0.9rem; }
+    .contact-item a {
+      color: #D4AF37;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      transition: color 0.25s;
+    }
+    .contact-item a:hover { color: #fff; }
+    footer {
+      background: #0a0a0a;
+      padding: 36px 0;
+      border-top: 1px solid rgba(212,175,55,0.12);
+      text-align: center;
+    }
+    footer p { color: #666; font-size: 0.9rem; }
+    footer .gold { color: #D4AF37; }
+    @media (max-width: 1000px) {
+      .mod-grid, .apt-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .header-inner { height: 80px; }
+      .logo { height: 68px; }
+      nav { gap: 12px; }
+      nav a { font-size: 13px; }
+      .dest-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
+    }
+    @media (max-width: 480px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <img src="logo.png" alt="Holirentals" class="logo">
+      <nav>
+        <a href="#inicio" class="active" data-i18n="nav_home">Inicio</a>
+        <a href="#beneficios" data-i18n="nav_benefits">Beneficios</a>
+        <a href="#destinos" data-i18n="nav_destinations">Destinos</a>
+        <a href="#modalidades" data-i18n="nav_management">Gestión</a>
+        <a href="#apartamentos" data-i18n="nav_apartments">Apartamentos</a>
+        <a href="#servicios" data-i18n="nav_services">Servicios</a>
+        <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        <div class="lang-switch">
+          <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+          <button id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <video autoplay muted loop playsinline>
+      <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">Gestión premium de alquiler vacacional</h1>
+      <p>Sitges · Garraf · Les Garrigues · Cantabria</p>
+      <div>
+        <a href="#apartamentos" class="btn" data-i18n="hero_btn1">Ver apartamentos</a>
+        <a href="#modalidades" class="btn btn-outline" data-i18n="hero_btn2">Modalidades de gestión</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <h2 class="section-title" data-i18n="ben_title">¿Por qué delegar la gestión de tu vivienda?</h2>
+      <p class="section-subtitle" data-i18n="ben_sub">Resultados reales para propietarios que quieren más y preocuparse menos</p>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-number">+30%</div>
+          <div class="benefit-title" data-i18n="ben1_t">Más ingresos</div>
+          <div class="benefit-text" data-i18n="ben1_d">Al delegar la gestión en expertos</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">3,6k+</div>
+          <div class="benefit-title" data-i18n="ben2_t">Clientes potenciales</div>
+          <div class="benefit-text" data-i18n="ben2_d">Buscan alojamiento cada mes en tu zona</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">85%</div>
+          <div class="benefit-title" data-i18n="ben3_t">Ocupación media</div>
+          <div class="benefit-text" data-i18n="ben3_d">Optimizamos tarifas para maximizar reservas</div>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-number">+100h</div>
+          <div class="benefit-title" data-i18n="ben4_t">Horas ahorradas</div>
+          <div class="benefit-text" data-i18n="ben4_d">Olvídate de gestiones y trámites</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="destinations" id="destinos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="dest_title">Nuestros destinos</h2>
+      <p class="section-subtitle" data-i18n="dest_sub">Propiedades seleccionadas en los mejores entornos</p>
+      <div class="dest-grid">
+        <div class="dest-card">
+          <img src="sitges.jpg" alt="Sitges" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div class="dest-name">Sitges</div>
+        </div>
+        <div class="dest-card">
+          <img src="garraf.jpg" alt="Garraf" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div class="dest-name">Garraf</div>
+        </div>
+        <div class="dest-card">
+          <img src="lesgarrigues.jpg" alt="Les Garrigues" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div class="dest-name">Les Garrigues</div>
+        </div>
+        <div class="dest-card">
+          <img src="cantabria.jpg" alt="Cantabria" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <div class="dest-name">Cantabria</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="modalities" id="modalidades">
+    <div class="container">
+      <h2 class="section-title" data-i18n="mod_title">Modalidades de gestión</h2>
+      <p class="section-subtitle" data-i18n="mod_sub">Elige el nivel de servicio que mejor se adapta a tu propiedad</p>
+      <div class="mod-grid">
+        <div class="mod-card basic">
+          <h3 data-i18n="mod_basic">Básica</h3>
+          <div class="price" data-i18n="mod_basic_p">Gestión esencial</div>
+          <ul>
+            <li data-i18n="mod_b1">Publicación en plataformas</li>
+            <li data-i18n="mod_b2">Gestión de reservas</li>
+            <li data-i18n="mod_b3">Calendario sincronizado</li>
+            <li data-i18n="mod_b4">Atención básica al huésped on line</li>
+          </ul>
+        </div>
+        <div class="mod-card standard">
+          <h3 data-i18n="mod_std">Standard</h3>
+          <div class="price" data-i18n="mod_std_p">La más elegida</div>
+          <ul>
+            <li data-i18n="mod_s1">Todo lo de Básica</li>
+            <li data-i18n="mod_s2">Check-in / Check-out</li>
+            <li data-i18n="mod_s3">Limpieza profesional</li>
+            <li data-i18n="mod_s4">Optimización de precios</li>
+            <li data-i18n="mod_s5">Comunicación completa con el huésped</li>
+          </ul>
+        </div>
+        <div class="mod-card premium">
+          <h3 data-i18n="mod_prem">Premium</h3>
+          <div class="price" data-i18n="mod_prem_p">Servicio integral</div>
+          <ul>
+            <li data-i18n="mod_p1">Todo lo de Standard</li>
+            <li data-i18n="mod_p2">Mantenimiento preventivo</li>
+            <li data-i18n="mod_p3">Fotografía profesional</li>
+            <li data-i18n="mod_p4">Reporting mensual</li>
+            <li data-i18n="mod_p5">Atención 24/7 prioritaria</li>
+            <li data-i18n="mod_p6">Ropa blanca premium</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apartments" id="apartamentos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="apt_title">Apartamentos destacados</h2>
+      <p class="section-subtitle" data-i18n="apt_sub">Alojamientos seleccionados y gestionados con los más altos estándares</p>
+      <div class="apt-grid">
+        <div class="apt-card">
+          <div class="apt-photo">
+            <img src="apartamentositges.jpg" alt="Apartamento Sitges">
+          </div>
+          <div class="apt-info">
+            <h3 data-i18n="apt1_t">Apartamento Sitges</h3>
+            <p data-i18n="apt1_d">Apartamento Premium Sitges</p>
+          </div>
+        </div>
+        <div class="apt-card">
+          <div class="apt-photo">
+            <img src="casaribes.jpg" alt="Casa Ribes">
+          </div>
+          <div class="apt-info">
+            <h3 data-i18n="apt2_t">Casa de pueblo en Sant Pere de Ribes</h3>
+            <p data-i18n="apt2_d">Casa de pueblo en casco urbano Sant Pere de Ribes</p>
+          </div>
+        </div>
+        <div class="apt-card">
+          <div class="apt-photo">
+            <img src="fincalesgarrigues2.jpg" alt="Finca en Les Garrigues">
+          </div>
+          <div class="apt-info">
+            <h3 data-i18n="apt3_t">Finca en Les Garrigues</h3>
+            <p data-i18n="apt3_d">Finca rústica sostenible en Les Garrigues</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicios">
+    <div class="container">
+      <h2 class="section-title" data-i18n="serv_title">Servicios de gestión premium</h2>
+      <p class="section-subtitle" data-i18n="serv_sub">Nos ocupamos de cada detalle</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <h3 data-i18n="serv1_t">Gestión integral</h3>
+          <p data-i18n="serv1_d">Administración completa de tu propiedad.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <h3 data-i18n="serv2_t">Reservas</h3>
+          <p data-i18n="serv2_d">Optimización de precios y ocupación.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3 data-i18n="serv3_t">Atención huésped</h3>
+          <p data-i18n="serv3_d">Comunicación profesional 24/7.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <h3 data-i18n="serv4_t">Mantenimiento</h3>
+          <p data-i18n="serv4_d">Limpieza y mantenimiento preventivo.</p>
+        </div>
+        <div class="service-card">
+          <svg class="service-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="5"/></svg>
+          <h3 data-i18n="serv5_t">Lavandería propia</h3>
+          <p data-i18n="serv5_d">Servicio propio de lavandería profesional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title" data-i18n="con_title">Contacto</h2>
+      <p class="section-subtitle" data-i18n="con_sub">Estamos a tu disposición</p>
+      <p style="max-width: 640px; margin: 0 auto 40px; color: #bbb; font-size: 1.05rem; line-height: 1.7;" data-i18n="con_text">
+        Somos un equipo joven, con experiencia y ganas de trabajar. Nos adaptamos a tus necesidades y resolvemos tus problemas de alquiler vacacional. No dudes en llamarnos y visitaremos tu propiedad online o presencialmente.
+      </p>
+      <div class="contact-methods">
+        <div class="contact-item">
+          <span data-i18n="con_phone">Teléfono</span>
+          <a href="tel:+34622448517">+34 622 448 517</a>
+        </div>
+        <div class="contact-item">
+          <span>WhatsApp</span>
+          <a href="https://wa.me/34622448517" target="_blank" data-i18n="con_wa">Enviar mensaje</a>
+        </div>
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:info@holirentals.com">info@holirentals.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><span class="gold">Holirentals</span> · <span data-i18n="footer_tag">Gestión premium de alquiler vacacional</span></p>
+      <p style="margin-top:8px">Sitges · Garraf · Les Garrigues · Cantabria</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        nav_home: "Inicio",
+        nav_benefits: "Beneficios",
+        nav_destinations: "Destinos",
+        nav_management: "Gestión",
+        nav_apartments: "Apartamentos",
+        nav_services: "Servicios",
+        nav_contact: "Contacto",
+        hero_title: "Gestión premium de alquiler vacacional",
+        hero_btn1: "Ver apartamentos",
+        hero_btn2: "Modalidades de gestión",
+        ben_title: "¿Por qué delegar la gestión de tu vivienda?",
+        ben_sub: "Resultados reales para propietarios que quieren más y preocuparse menos",
+        ben1_t: "Más ingresos",
+        ben1_d: "Al delegar la gestión en expertos",
+        ben2_t: "Clientes potenciales",
+        ben2_d: "Buscan alojamiento cada mes en tu zona",
+        ben3_t: "Ocupación media",
+        ben3_d: "Optimizamos tarifas para maximizar reservas",
+        ben4_t: "Horas ahorradas",
+        ben4_d: "Olvídate de gestiones y trámites",
+        dest_title: "Nuestros destinos",
+        dest_sub: "Propiedades seleccionadas en los mejores entornos",
+        mod_title: "Modalidades de gestión",
+        mod_sub: "Elige el nivel de servicio que mejor se adapta a tu propiedad",
+        mod_basic: "Básica",
+        mod_basic_p: "Gestión esencial",
+        mod_b1: "Publicación en plataformas",
+        mod_b2: "Gestión de reservas",
+        mod_b3: "Calendario sincronizado",
+        mod_b4: "Atención básica al huésped on line",
+        mod_std: "Standard",
+        mod_std_p: "La más elegida",
+        mod_s1: "Todo lo de Básica",
+        mod_s2: "Check-in / Check-out",
+        mod_s3: "Limpieza profesional",
+        mod_s4: "Optimización de precios",
+        mod_s5: "Comunicación completa con el huésped",
+        mod_prem: "Premium",
+        mod_prem_p: "Servicio integral",
+        mod_p1: "Todo lo de Standard",
+        mod_p2: "Mantenimiento preventivo",
+        mod_p3: "Fotografía profesional",
+        mod_p4: "Reporting mensual",
+        mod_p5: "Atención 24/7 prioritaria",
+        mod_p6: "Ropa blanca premium",
+        apt_title: "Apartamentos destacados",
+        apt_sub: "Alojamientos seleccionados y gestionados con los más altos estándares",
+        apt1_t: "Apartamento Sitges",
+        apt1_d: "Apartamento Premium Sitges",
+        apt2_t: "Casa de pueblo en Sant Pere de Ribes",
+        apt2_d: "Casa de pueblo en casco urbano Sant Pere de Ribes",
+        apt3_t: "Finca en Les Garrigues",
+        apt3_d: "Finca rústica sostenible en Les Garrigues",
+        serv_title: "Servicios de gestión premium",
+        serv_sub: "Nos ocupamos de cada detalle",
+        serv1_t: "Gestión integral",
+        serv1_d: "Administración completa de tu propiedad.",
+        serv2_t: "Reservas",
+        serv2_d: "Optimización de precios y ocupación.",
+        serv3_t: "Atención huésped",
+        serv3_d: "Comunicación profesional 24/7.",
+        serv4_t: "Mantenimiento",
+        serv4_d: "Limpieza y mantenimiento preventivo.",
+        serv5_t: "Lavandería propia",
+        serv5_d: "Servicio propio de lavandería profesional.",
+        con_title: "Contacto",
+        con_sub: "Estamos a tu disposición",
+        con_text: "Somos un equipo joven, con experiencia y ganas de trabajar. Nos adaptamos a tus necesidades y resolvemos tus problemas de alquiler vacacional. No dudes en llamarnos y visitaremos tu propiedad online o presencialmente.",
+        con_phone: "Teléfono",
+        con_wa: "Enviar mensaje",
+        footer_tag: "Gestión premium de alquiler vacacional"
+      },
+      en: {
+        nav_home: "Home",
+        nav_benefits: "Benefits",
+        nav_destinations: "Destinations",
+        nav_management: "Management",
+        nav_apartments: "Apartments",
+        nav_services: "Services",
+        nav_contact: "Contact",
+        hero_title: "Premium vacation rental management",
+        hero_btn1: "View apartments",
+        hero_btn2: "Management plans",
+        ben_title: "Why outsource your property management?",
+        ben_sub: "Real results for owners who want more and worry less",
+        ben1_t: "More income",
+        ben1_d: "By delegating management to experts",
+        ben2_t: "Potential guests",
+        ben2_d: "Looking for accommodation in your area every month",
+        ben3_t: "Average occupancy",
+        ben3_d: "We optimise rates to maximise bookings",
+        ben4_t: "Hours saved",
+        ben4_d: "Forget about admin and paperwork",
+        dest_title: "Our destinations",
+        dest_sub: "Hand-picked properties in the best locations",
+        mod_title: "Management plans",
+        mod_sub: "Choose the service level that best fits your property",
+        mod_basic: "Basic",
+        mod_basic_p: "Essential management",
+        mod_b1: "Listing on platforms",
+        mod_b2: "Booking management",
+        mod_b3: "Synced calendar",
+        mod_b4: "Basic online guest support",
+        mod_std: "Standard",
+        mod_std_p: "Most popular",
+        mod_s1: "Everything in Basic",
+        mod_s2: "Check-in / Check-out",
+        mod_s3: "Professional cleaning",
+        mod_s4: "Price optimisation",
+        mod_s5: "Full guest communication",
+        mod_prem: "Premium",
+        mod_prem_p: "Full-service",
+        mod_p1: "Everything in Standard",
+        mod_p2: "Preventive maintenance",
+        mod_p3: "Professional photography",
+        mod_p4: "Monthly reporting",
+        mod_p5: "Priority 24/7 support",
+        mod_p6: "Premium linens",
+        apt_title: "Featured apartments",
+        apt_sub: "Selected stays managed to the highest standards",
+        apt1_t: "Sitges Apartment",
+        apt1_d: "Premium apartment in Sitges",
+        apt2_t: "Village house in Sant Pere de Ribes",
+        apt2_d: "Village house in the old town of Sant Pere de Ribes",
+        apt3_t: "Farmhouse in Les Garrigues",
+        apt3_d: "Sustainable rustic farmhouse in Les Garrigues",
+        serv_title: "Premium management services",
+        serv_sub: "We take care of every detail",
+        serv1_t: "Full management",
+        serv1_d: "Complete administration of your property.",
+        serv2_t: "Bookings",
+        serv2_d: "Price and occupancy optimisation.",
+        serv3_t: "Guest support",
+        serv3_d: "Professional communication 24/7.",
+        serv4_t: "Maintenance",
+        serv4_d: "Cleaning and preventive maintenance.",
+        serv5_t: "In-house laundry",
+        serv5_d: "Our own professional laundry service.",
+        con_title: "Contact",
+        con_sub: "We are here for you",
+        con_text: "We are a young team with experience and drive. We adapt to your needs and solve your vacation rental challenges. Call us and we will visit your property online or in person.",
+        con_phone: "Phone",
+        con_wa: "Send message",
+        footer_tag: "Premium vacation rental management"
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+</body>
+</html>
