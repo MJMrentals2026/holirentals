@@ -34,6 +34,38 @@
       height: 100px;
     }
     .logo { height: 92px; width: auto; }
+    
+    /* Botón hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 2.5px;
+      width: 100%;
+      background: #D4AF37;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(8.5px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-8.5px) rotate(-45deg);
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -66,6 +98,7 @@
       border-color: #D4AF37;
       color: #0d0d0d;
     }
+
     .hero {
       position: relative;
       height: 100vh;
@@ -98,7 +131,7 @@
     }
     .hero-content h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.3rem, 5vw, 3.6rem);
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
       color: #fff;
       margin-bottom: 18px;
       line-height: 1.2;
@@ -109,6 +142,12 @@
       color: rgba(255,255,255,0.9);
       margin-bottom: 36px;
       font-weight: 300;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
     .btn {
       display: inline-block;
@@ -128,9 +167,9 @@
       background: transparent;
       border: 1.5px solid #D4AF37;
       color: #D4AF37;
-      margin-left: 12px;
     }
     .btn-outline:hover { background: #D4AF37; color: #0d0d0d; }
+
     section { padding: 90px 0; }
     .section-title {
       font-family: 'Playfair Display', serif;
@@ -146,6 +185,7 @@
       margin: 0 auto 50px;
       font-size: 1.05rem;
     }
+
     .benefits { background: #111; }
     .benefits-grid {
       display: grid;
@@ -198,6 +238,7 @@
       color: #444;
       line-height: 1.5;
     }
+
     .destinations { background: #111; }
     .dest-grid {
       display: grid;
@@ -229,6 +270,7 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
+
     .modalities { background: #0d0d0d; }
     .mod-grid {
       display: grid;
@@ -278,6 +320,7 @@
     }
     .mod-card.premium ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .mod-card ul li:last-child { border-bottom: none; }
+
     .apartments { background: #111; }
     .apt-grid {
       display: grid;
@@ -307,6 +350,7 @@
       margin-bottom: 8px;
     }
     .apt-info p { color: #999; font-size: 0.95rem; }
+
     .services { background: #0d0d0d; }
     .services-grid {
       display: grid;
@@ -339,6 +383,7 @@
       font-size: 0.82rem;
       line-height: 1.45;
     }
+
     .contact { background: #111; text-align: center; }
     .contact-methods {
       display: flex;
@@ -361,6 +406,7 @@
       transition: color 0.25s;
     }
     .contact-item a:hover { color: #fff; }
+
     footer {
       background: #0a0a0a;
       padding: 36px 0;
@@ -369,32 +415,81 @@
     }
     footer p { color: #666; font-size: 0.9rem; }
     footer .gold { color: #D4AF37; }
+
+    /* ========== RESPONSIVE ========== */
     @media (max-width: 1000px) {
       .mod-grid, .apt-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(3, 1fr); }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    @media (max-width: 900px) {
+      .menu-toggle { display: flex; }
+      
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        transition: right 0.35s ease;
+        border-left: 1px solid rgba(212, 175, 55, 0.2);
+        z-index: 1000;
+      }
+      nav.open {
+        right: 0;
+      }
+      nav a {
+        font-size: 1.15rem;
+      }
+      .lang-switch {
+        margin-left: 0;
+        margin-top: 12px;
+      }
+    }
+
     @media (max-width: 700px) {
-      .header-inner { height: 80px; }
-      .logo { height: 68px; }
-      nav { gap: 12px; }
-      nav a { font-size: 13px; }
+      .header-inner { height: 72px; }
+      .logo { height: 58px; }
+      .container { padding: 0 18px; }
+      section { padding: 60px 0; }
+      .section-title { font-size: 1.7rem; }
+      .section-subtitle { font-size: 0.98rem; margin-bottom: 36px; }
       .dest-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr; }
-      .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
+      .hero { min-height: 520px; }
+      .hero-content p { font-size: 1.05rem; margin-bottom: 28px; }
+      .btn { padding: 13px 26px; font-size: 14px; }
+      .dest-card { height: 240px; }
+      .contact-methods { gap: 32px; }
+      .contact-item a { font-size: 1.15rem; }
     }
+
     @media (max-width: 480px) {
       .services-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 1.9rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="container header-inner">
       <img src="logo.png" alt="Holirentals" class="logo">
-      <nav>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="mainNav">
         <a href="#inicio" class="active" data-i18n="nav_home">Inicio</a>
         <a href="#beneficios" data-i18n="nav_benefits">Beneficios</a>
         <a href="#destinos" data-i18n="nav_destinations">Destinos</a>
@@ -418,7 +513,7 @@
     <div class="hero-content">
       <h1 data-i18n="hero_title">Gestión premium de alquiler vacacional</h1>
       <p>Sitges · Garraf · Les Garrigues · Cantabria</p>
-      <div>
+      <div class="hero-buttons">
         <a href="#apartamentos" class="btn" data-i18n="hero_btn1">Ver apartamentos</a>
         <a href="#modalidades" class="btn btn-outline" data-i18n="hero_btn2">Modalidades de gestión</a>
       </div>
@@ -460,19 +555,19 @@
       <p class="section-subtitle" data-i18n="dest_sub">Propiedades seleccionadas en los mejores entornos</p>
       <div class="dest-grid">
         <div class="dest-card">
-          <img src="sitges.jpg" alt="Sitges" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="sitges.jpg" alt="Sitges">
           <div class="dest-name">Sitges</div>
         </div>
         <div class="dest-card">
-          <img src="garraf.jpg" alt="Garraf" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="garraf.jpg" alt="Garraf">
           <div class="dest-name">Garraf</div>
         </div>
         <div class="dest-card">
-          <img src="lesgarrigues.jpg" alt="Les Garrigues" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="lesgarrigues.jpg" alt="Les Garrigues">
           <div class="dest-name">Les Garrigues</div>
         </div>
         <div class="dest-card">
-          <img src="cantabria.jpg" alt="Cantabria" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <img src="cantabria.jpg" alt="Cantabria">
           <div class="dest-name">Cantabria</div>
         </div>
       </div>
@@ -623,6 +718,7 @@
   </footer>
 
   <script>
+    // Traducciones
     const translations = {
       es: {
         nav_home: "Inicio",
@@ -783,7 +879,31 @@
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     }
-  </script>
 
+    // Menú móvil
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+      });
+    });
+
+    // Cerrar menú al redimensionar a desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        menuToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
