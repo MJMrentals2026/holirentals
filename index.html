@@ -6,14 +6,13 @@
  
   <title>Gestionamos tu piso como el nuestro | Holirentals Sitges, Garraf y Cantabria</title>
  
-  <meta name="description" content="Gestión integral de alquiler vacacional en Sitges, Garraf, Les Garrigues y Cantabria. Reservas, huéspedes y operativa a cargo nuestro. Pedir análisis gratuito.">
+  <meta name="description" content="Gestionamos tu piso como el nuestro. Alquiler vacacional en Sitges, Garraf, Les Garrigues y Cantabria. Reservas, huéspedes y operativa a cargo nuestro. Pedir análisis gratuito.">
  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MFDEXBBM13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MFDEXBBM13');
 </script>
   <!-- Schema LocalBusiness -->
@@ -22,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Holirentals",
-    "description": "Gestión premium de alquiler vacacional en Sitges, Garraf, Les Garrigues y Cantabria. Administración integral de viviendas turísticas para propietarios.",
+    "description": "Gestionamos tu piso como el nuestro. Alquiler vacacional en Sitges, Garraf, Les Garrigues y Cantabria. Reservas, huéspedes y operativa a cargo nuestro.",
     "url": "https://holirentals.com",
     "telephone": "+34622448517",
     "email": "info@holirentals.com",
@@ -34,43 +33,23 @@
       "addressRegion": "Cataluña"
     },
     "areaServed": [
-      {
-        "@type": "Place",
-        "name": "Sitges"
-      },
-      {
-        "@type": "Place",
-        "name": "Garraf"
-      },
-      {
-        "@type": "Place",
-        "name": "Les Garrigues"
-      },
-      {
-        "@type": "Place",
-        "name": "Cantabria"
-      }
+      { "@type": "Place", "name": "Sitges" },
+      { "@type": "Place", "name": "Garraf" },
+      { "@type": "Place", "name": "Les Garrigues" },
+      { "@type": "Place", "name": "Cantabria" }
     ],
     "sameAs": [],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
       "closes": "19:00"
     }
   }
   </script>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
  
   <style>
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -100,7 +79,6 @@
     }
     .logo { height: 92px; width: auto; }
     
-    /* Botón hamburguesa */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -130,7 +108,6 @@
     .menu-toggle.active span:nth-child(3) {
       transform: translateY(-8.5px) rotate(-45deg);
     }
-
     nav {
       display: flex;
       align-items: center;
@@ -163,7 +140,6 @@
       border-color: #D4AF37;
       color: #0d0d0d;
     }
-
     .hero {
       position: relative;
       height: 100vh;
@@ -205,9 +181,10 @@
     .hero-content p {
       font-size: 1.15rem;
       color: rgba(255,255,255,0.9);
-      margin-bottom: 36px;
+      margin-bottom: 18px;
       font-weight: 300;
     }
+    .hero-content .hero-subtitle { margin-bottom: 36px; }
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -234,7 +211,6 @@
       color: #D4AF37;
     }
     .btn-outline:hover { background: #D4AF37; color: #0d0d0d; }
-
     section { padding: 90px 0; }
     .section-title {
       font-family: 'Playfair Display', serif;
@@ -250,7 +226,6 @@
       margin: 0 auto 50px;
       font-size: 1.05rem;
     }
-
     .benefits { background: #111; }
     .benefits-grid {
       display: grid;
@@ -303,7 +278,17 @@
       color: #444;
       line-height: 1.5;
     }
-
+    .nosotros { background: #0d0d0d; }
+    .nosotros-text {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      color: #ccc;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .nosotros-text p { margin-bottom: 16px; }
+    .nosotros-cta { text-align: center; }
     .destinations { background: #111; }
     .dest-grid {
       display: grid;
@@ -335,7 +320,6 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
-
     .modalities { background: #0d0d0d; }
     .mod-grid {
       display: grid;
@@ -385,7 +369,6 @@
     }
     .mod-card.premium ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .mod-card ul li:last-child { border-bottom: none; }
-
     .apartments { background: #111; }
     .apt-grid {
       display: grid;
@@ -415,7 +398,6 @@
       margin-bottom: 8px;
     }
     .apt-info p { color: #999; font-size: 0.95rem; }
-
     .services { background: #0d0d0d; }
     .services-grid {
       display: grid;
@@ -448,7 +430,6 @@
       font-size: 0.82rem;
       line-height: 1.45;
     }
-
     .contact { background: #111; text-align: center; }
     .contact-methods {
       display: flex;
@@ -471,7 +452,6 @@
       transition: color 0.25s;
     }
     .contact-item a:hover { color: #fff; }
-
     footer {
       background: #0a0a0a;
       padding: 36px 0;
@@ -480,17 +460,13 @@
     }
     footer p { color: #666; font-size: 0.9rem; }
     footer .gold { color: #D4AF37; }
-
-    /* ========== RESPONSIVE ========== */
     @media (max-width: 1000px) {
       .mod-grid, .apt-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: repeat(3, 1fr); }
       .benefits-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 900px) {
       .menu-toggle { display: flex; }
-      
       nav {
         position: fixed;
         top: 0;
@@ -507,18 +483,10 @@
         border-left: 1px solid rgba(212, 175, 55, 0.2);
         z-index: 1000;
       }
-      nav.open {
-        right: 0;
-      }
-      nav a {
-        font-size: 1.15rem;
-      }
-      .lang-switch {
-        margin-left: 0;
-        margin-top: 12px;
-      }
+      nav.open { right: 0; }
+      nav a { font-size: 1.15rem; }
+      .lang-switch { margin-left: 0; margin-top: 12px; }
     }
-
     @media (max-width: 700px) {
       .header-inner { height: 72px; }
       .logo { height: 58px; }
@@ -530,13 +498,12 @@
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .benefits-grid { grid-template-columns: 1fr; }
       .hero { min-height: 520px; }
-      .hero-content p { font-size: 1.05rem; margin-bottom: 28px; }
+      .hero-content p { font-size: 1.05rem; }
       .btn { padding: 13px 26px; font-size: 14px; }
       .dest-card { height: 240px; }
       .contact-methods { gap: 32px; }
       .contact-item a { font-size: 1.15rem; }
     }
-
     @media (max-width: 480px) {
       .services-grid { grid-template-columns: 1fr; }
       .hero-content h1 { font-size: 1.9rem; }
@@ -553,10 +520,10 @@
         <span></span>
         <span></span>
       </button>
-
       <nav id="mainNav">
         <a href="#inicio" class="active" data-i18n="nav_home">Inicio</a>
         <a href="#beneficios" data-i18n="nav_benefits">Beneficios</a>
+        <a href="#nosotros" data-i18n="nav_about">Nosotros</a>
         <a href="#destinos" data-i18n="nav_destinations">Destinos</a>
         <a href="#modalidades" data-i18n="nav_management">Gestión</a>
         <a href="#apartamentos" data-i18n="nav_apartments">Apartamentos</a>
@@ -577,47 +544,60 @@
     <div class="hero-content">
       <h1 data-i18n="hero_title">Gestionamos tu piso como el nuestro.</h1>
       <p>Sitges · Garraf · Les Garrigues · Cantabria</p>
-      <p data-i18n="hero_subtitle">Reservas, huéspedes y operativa, a cargo nuestro.<br>Tú recibes el rendimiento y un informe claro.</p>
+      <p class="hero-subtitle" data-i18n-html="hero_subtitle">Reservas, huéspedes y operativa, a cargo nuestro.<br>Tú recibes el rendimiento y un informe claro.</p>
       <div class="hero-buttons">
         <a href="#contacto" class="btn" data-i18n="hero_btn1">Pedir análisis gratuito</a>
         <a href="https://wa.me/34622448517" class="btn btn-outline" data-i18n="hero_btn2">WhatsApp</a>
       </div>
     </div>
   </section>
-
   <section class="benefits" id="beneficios">
     <div class="container">
       <h2 class="section-title" data-i18n="ben_title">¿Por qué delegar la gestión de tu vivienda?</h2>
-      <p class="section-subtitle" data-i18n="ben_sub">Resultados reales para propietarios que quieren más y preocuparse menos</p>
+      <p class="section-subtitle" data-i18n="ben_sub">Menos gestiones para ti. Más control y claridad sobre tu vivienda.</p>
       <div class="benefits-grid">
         <div class="benefit-card">
-          <div class="benefit-number">+30%</div>
-          <div class="benefit-title" data-i18n="ben1_t">Más ingresos</div>
-          <div class="benefit-text" data-i18n="ben1_d">Al delegar la gestión en expertos</div>
+          <div class="benefit-number" data-i18n="ben1_n">Precios</div>
+          <div class="benefit-title" data-i18n="ben1_t">Mejor posicionados</div>
+          <div class="benefit-text" data-i18n="ben1_d">Ajustamos tarifas y calendarios para mejorar ocupación e ingresos.</div>
         </div>
         <div class="benefit-card">
-          <div class="benefit-number">3,6k+</div>
-          <div class="benefit-title" data-i18n="ben2_t">Clientes potenciales</div>
-          <div class="benefit-text" data-i18n="ben2_d">Buscan alojamiento cada mes en tu zona</div>
+          <div class="benefit-number" data-i18n="ben2_n">Canales</div>
+          <div class="benefit-title" data-i18n="ben2_t">Más visibilidad</div>
+          <div class="benefit-text" data-i18n="ben2_d">Publicamos y sincronizamos tu vivienda en las principales plataformas.</div>
         </div>
         <div class="benefit-card">
-          <div class="benefit-number">85%</div>
-          <div class="benefit-title" data-i18n="ben3_t">Ocupación media</div>
-          <div class="benefit-text" data-i18n="ben3_d">Optimizamos tarifas para maximizar reservas</div>
+          <div class="benefit-number" data-i18n="ben3_n">Huéspedes</div>
+          <div class="benefit-title" data-i18n="ben3_t">Atención directa</div>
+          <div class="benefit-text" data-i18n="ben3_d">Respondemos reservas e incidencias para que tú no estés pendiente.</div>
         </div>
         <div class="benefit-card">
-          <div class="benefit-number">+100h</div>
-          <div class="benefit-title" data-i18n="ben4_t">Horas ahorradas</div>
-          <div class="benefit-text" data-i18n="ben4_d">Olvídate de gestiones y trámites</div>
+          <div class="benefit-number" data-i18n="ben4_n">Tiempo</div>
+          <div class="benefit-title" data-i18n="ben4_t">Menos trámites</div>
+          <div class="benefit-text" data-i18n="ben4_d">Nos ocupamos de la operativa diaria y te enviamos un informe claro.</div>
         </div>
       </div>
     </div>
   </section>
-
+  <section class="nosotros" id="nosotros">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">Quiénes somos</h2>
+      <p class="section-subtitle" data-i18n="about_sub">Propietarios que gestionamos viviendas como las nuestras.</p>
+      <div class="nosotros-text">
+        <p data-i18n="about_p1">Somos propietarios. Gestionamos nuestras propias viviendas turísticas y aplicamos la misma operativa a las que nos confían.</p>
+        <p data-i18n="about_p2">No somos una agencia de decenas de pisos. Preferimos pocas viviendas, atención directa y que hables con quien decide.</p>
+        <p data-i18n="about_p3">Trabajamos en Sitges, Garraf, Les Garrigues y Cantabria. Nos ocupamos de anuncios, reservas, comunicación con el huésped y, según el paquete, de check-in, limpieza y mantenimiento.</p>
+        <p data-i18n="about_p4">Si buscas una plataforma grande, hay otras opciones. Si quieres que tu piso se gestione con el mismo cuidado que el nuestro, hablemos.</p>
+      </div>
+      <div class="nosotros-cta">
+        <a href="#contacto" class="btn" data-i18n="hero_btn1">Pedir análisis gratuito</a>
+      </div>
+    </div>
+  </section>
   <section class="destinations" id="destinos">
     <div class="container">
       <h2 class="section-title" data-i18n="dest_title">Nuestros destinos</h2>
-      <p class="section-subtitle" data-i18n="dest_sub">Propiedades seleccionadas en los mejores entornos</p>
+      <p class="section-subtitle" data-i18n="dest_sub">Zonas donde gestionamos viviendas turísticas</p>
       <div class="dest-grid">
         <div class="dest-card">
           <img src="sitges.jpg" alt="Sitges">
@@ -638,7 +618,6 @@
       </div>
     </div>
   </section>
-
   <section class="modalities" id="modalidades">
     <div class="container">
       <h2 class="section-title" data-i18n="mod_title">Modalidades de gestión</h2>
@@ -680,11 +659,10 @@
       </div>
     </div>
   </section>
-
   <section class="apartments" id="apartamentos">
     <div class="container">
-      <h2 class="section-title" data-i18n="apt_title">Apartamentos destacados</h2>
-      <p class="section-subtitle" data-i18n="apt_sub">Alojamientos seleccionados y gestionados con los más altos estándares</p>
+      <h2 class="section-title" data-i18n="apt_title">Viviendas que ya gestionamos</h2>
+      <p class="section-subtitle" data-i18n="apt_sub">Empezamos con nuestras propias propiedades. Esta es la operativa que aplicaremos a la tuya.</p>
       <div class="apt-grid">
         <div class="apt-card">
           <div class="apt-photo">
@@ -692,7 +670,7 @@
           </div>
           <div class="apt-info">
             <h3 data-i18n="apt1_t">Apartamento Sitges</h3>
-            <p data-i18n="apt1_d">Apartamento Premium Sitges</p>
+            <p data-i18n="apt1_d">Apartamento en Sitges</p>
           </div>
         </div>
         <div class="apt-card">
@@ -716,11 +694,10 @@
       </div>
     </div>
   </section>
-
   <section class="services" id="servicios">
     <div class="container">
-      <h2 class="section-title" data-i18n="serv_title">Servicios de gestión premium</h2>
-      <p class="section-subtitle" data-i18n="serv_sub">Nos ocupamos de cada detalle</p>
+      <h2 class="section-title" data-i18n="serv_title">De qué nos ocupamos</h2>
+      <p class="section-subtitle" data-i18n="serv_sub">La operativa diaria, para que tú no tengas que estar pendiente</p>
       <div class="services-grid">
         <div class="service-card">
           <svg class="service-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -750,13 +727,12 @@
       </div>
     </div>
   </section>
-
   <section class="contact" id="contacto">
     <div class="container">
-      <h2 class="section-title" data-i18n="con_title">Contacto</h2>
-      <p class="section-subtitle" data-i18n="con_sub">Estamos a tu disposición</p>
+      <h2 class="section-title" data-i18n="con_title">Pedir análisis gratuito</h2>
+      <p class="section-subtitle" data-i18n="con_sub">Te respondemos en menos de 24 horas</p>
       <p style="max-width: 640px; margin: 0 auto 40px; color: #bbb; font-size: 1.05rem; line-height: 1.7;" data-i18n="con_text">
-        Somos un equipo joven, con experiencia y ganas de trabajar. Nos adaptamos a tus necesidades y resolvemos tus problemas de alquiler vacacional. No dudes en llamarnos y visitaremos tu propiedad online o presencialmente.
+        Cuéntanos la zona de tu vivienda, si tiene licencia y si ya está publicada. Te decimos qué se puede mejorar y qué paquete encaja mejor, sin compromiso.
       </p>
       <div class="contact-methods">
         <div class="contact-item">
@@ -774,41 +750,49 @@
       </div>
     </div>
   </section>
-
   <footer>
     <div class="container">
-      <p><span class="gold">Holirentals</span> · <span data-i18n="footer_tag">Gestión premium de alquiler vacacional</span></p>
+      <p><span class="gold">Holirentals</span> · <span data-i18n="footer_tag">Gestionamos tu piso como el nuestro</span></p>
       <p style="margin-top:8px">Sitges · Garraf · Les Garrigues · Cantabria</p>
     </div>
   </footer>
-
   <script>
-    // Traducciones
     const translations = {
       es: {
         nav_home: "Inicio",
         nav_benefits: "Beneficios",
+        nav_about: "Nosotros",
         nav_destinations: "Destinos",
         nav_management: "Gestión",
         nav_apartments: "Apartamentos",
         nav_services: "Servicios",
         nav_contact: "Contacto",
         hero_title: "Gestionamos tu piso como el nuestro.",
-	hero_subtitle: "Reservas, huéspedes y operativa, a cargo nuestro. Tú recibes el rendimiento y un informe claro.",
-	hero_btn1: "Pedir análisis gratuito",
-	hero_btn2: "WhatsApp",
+        hero_subtitle: "Reservas, huéspedes y operativa, a cargo nuestro.<br>Tú recibes el rendimiento y un informe claro.",
+        hero_btn1: "Pedir análisis gratuito",
+        hero_btn2: "WhatsApp",
         ben_title: "¿Por qué delegar la gestión de tu vivienda?",
-        ben_sub: "Resultados reales para propietarios que quieren más y preocuparse menos",
-        ben1_t: "Más ingresos",
-        ben1_d: "Al delegar la gestión en expertos",
-        ben2_t: "Clientes potenciales",
-        ben2_d: "Buscan alojamiento cada mes en tu zona",
-        ben3_t: "Ocupación media",
-        ben3_d: "Optimizamos tarifas para maximizar reservas",
-        ben4_t: "Horas ahorradas",
-        ben4_d: "Olvídate de gestiones y trámites",
+        ben_sub: "Menos gestiones para ti. Más control y claridad sobre tu vivienda.",
+        ben1_n: "Precios",
+        ben1_t: "Mejor posicionados",
+        ben1_d: "Ajustamos tarifas y calendarios para mejorar ocupación e ingresos.",
+        ben2_n: "Canales",
+        ben2_t: "Más visibilidad",
+        ben2_d: "Publicamos y sincronizamos tu vivienda en las principales plataformas.",
+        ben3_n: "Huéspedes",
+        ben3_t: "Atención directa",
+        ben3_d: "Respondemos reservas e incidencias para que tú no estés pendiente.",
+        ben4_n: "Tiempo",
+        ben4_t: "Menos trámites",
+        ben4_d: "Nos ocupamos de la operativa diaria y te enviamos un informe claro.",
+        about_title: "Quiénes somos",
+        about_sub: "Propietarios que gestionamos viviendas como las nuestras.",
+        about_p1: "Somos propietarios. Gestionamos nuestras propias viviendas turísticas y aplicamos la misma operativa a las que nos confían.",
+        about_p2: "No somos una agencia de decenas de pisos. Preferimos pocas viviendas, atención directa y que hables con quien decide.",
+        about_p3: "Trabajamos en Sitges, Garraf, Les Garrigues y Cantabria. Nos ocupamos de anuncios, reservas, comunicación con el huésped y, según el paquete, de check-in, limpieza y mantenimiento.",
+        about_p4: "Si buscas una plataforma grande, hay otras opciones. Si quieres que tu piso se gestione con el mismo cuidado que el nuestro, hablemos.",
         dest_title: "Nuestros destinos",
-        dest_sub: "Propiedades seleccionadas en los mejores entornos",
+        dest_sub: "Zonas donde gestionamos viviendas turísticas",
         mod_title: "Modalidades de gestión",
         mod_sub: "Elige el nivel de servicio que mejor se adapta a tu propiedad",
         mod_basic: "Básica",
@@ -832,16 +816,16 @@
         mod_p4: "Reporting mensual",
         mod_p5: "Atención 24/7 prioritaria",
         mod_p6: "Ropa blanca premium",
-        apt_title: "Apartamentos destacados",
-        apt_sub: "Alojamientos seleccionados y gestionados con los más altos estándares",
+        apt_title: "Viviendas que ya gestionamos",
+        apt_sub: "Empezamos con nuestras propias propiedades. Esta es la operativa que aplicaremos a la tuya.",
         apt1_t: "Apartamento Sitges",
-        apt1_d: "Apartamento Premium Sitges",
+        apt1_d: "Apartamento en Sitges",
         apt2_t: "Casa de pueblo en Sant Pere de Ribes",
         apt2_d: "Casa de pueblo en casco urbano Sant Pere de Ribes",
         apt3_t: "Finca en Les Garrigues",
         apt3_d: "Finca rústica sostenible en Les Garrigues",
-        serv_title: "Servicios de gestión premium",
-        serv_sub: "Nos ocupamos de cada detalle",
+        serv_title: "De qué nos ocupamos",
+        serv_sub: "La operativa diaria, para que tú no tengas que estar pendiente",
         serv1_t: "Gestión integral",
         serv1_d: "Administración completa de tu propiedad.",
         serv2_t: "Reservas",
@@ -852,37 +836,48 @@
         serv4_d: "Limpieza y mantenimiento preventivo.",
         serv5_t: "Lavandería propia",
         serv5_d: "Servicio propio de lavandería profesional.",
-        con_title: "Contacto",
-        con_sub: "Estamos a tu disposición",
-        con_text: "Somos un equipo joven, con experiencia y ganas de trabajar. Nos adaptamos a tus necesidades y resolvemos tus problemas de alquiler vacacional. No dudes en llamarnos y visitaremos tu propiedad online o presencialmente.",
+        con_title: "Pedir análisis gratuito",
+        con_sub: "Te respondemos en menos de 24 horas",
+        con_text: "Cuéntanos la zona de tu vivienda, si tiene licencia y si ya está publicada. Te decimos qué se puede mejorar y qué paquete encaja mejor, sin compromiso.",
         con_phone: "Teléfono",
         con_wa: "Enviar mensaje",
-        footer_tag: "Gestión premium de alquiler vacacional"
+        footer_tag: "Gestionamos tu piso como el nuestro"
       },
       en: {
         nav_home: "Home",
         nav_benefits: "Benefits",
+        nav_about: "About",
         nav_destinations: "Destinations",
         nav_management: "Management",
         nav_apartments: "Apartments",
         nav_services: "Services",
         nav_contact: "Contact",
-    	hero_title: "We manage your home like our own.",
-	hero_subtitle: "Bookings, guests and operations handled by us. You get the return and a clear report.",
-	hero_btn1: "Request a free review",
-	hero_btn2: "WhatsApp",
+        hero_title: "We manage your home like our own.",
+        hero_subtitle: "Bookings, guests and operations handled by us.<br>You get the return and a clear report.",
+        hero_btn1: "Request a free review",
+        hero_btn2: "WhatsApp",
         ben_title: "Why outsource your property management?",
-        ben_sub: "Real results for owners who want more and worry less",
-        ben1_t: "More income",
-        ben1_d: "By delegating management to experts",
-        ben2_t: "Potential guests",
-        ben2_d: "Looking for accommodation in your area every month",
-        ben3_t: "Average occupancy",
-        ben3_d: "We optimise rates to maximise bookings",
-        ben4_t: "Hours saved",
-        ben4_d: "Forget about admin and paperwork",
+        ben_sub: "Less admin for you. More control and clarity over your home.",
+        ben1_n: "Pricing",
+        ben1_t: "Better positioned",
+        ben1_d: "We adjust rates and calendars to improve occupancy and income.",
+        ben2_n: "Channels",
+        ben2_t: "More visibility",
+        ben2_d: "We list and sync your home on the main platforms.",
+        ben3_n: "Guests",
+        ben3_t: "Direct support",
+        ben3_d: "We handle bookings and issues so you don't have to stay on call.",
+        ben4_n: "Time",
+        ben4_t: "Less paperwork",
+        ben4_d: "We run the day-to-day and send you a clear report.",
+        about_title: "Who we are",
+        about_sub: "Owners managing homes the way we manage our own.",
+        about_p1: "We are owners. We manage our own holiday homes and apply the same operation to the ones entrusted to us.",
+        about_p2: "We are not an agency with dozens of properties. We prefer a small portfolio, direct attention, and that you speak with the person who decides.",
+        about_p3: "We work in Sitges, Garraf, Les Garrigues and Cantabria. We handle listings, bookings, guest communication and, depending on the plan, check-in, cleaning and maintenance.",
+        about_p4: "If you want a large platform, there are other options. If you want your home managed with the same care as ours, let's talk.",
         dest_title: "Our destinations",
-        dest_sub: "Hand-picked properties in the best locations",
+        dest_sub: "Areas where we manage holiday homes",
         mod_title: "Management plans",
         mod_sub: "Choose the service level that best fits your property",
         mod_basic: "Basic",
@@ -906,16 +901,16 @@
         mod_p4: "Monthly reporting",
         mod_p5: "Priority 24/7 support",
         mod_p6: "Premium linens",
-        apt_title: "Featured apartments",
-        apt_sub: "Selected stays managed to the highest standards",
+        apt_title: "Homes we already manage",
+        apt_sub: "We started with our own properties. This is the operation we will apply to yours.",
         apt1_t: "Sitges Apartment",
-        apt1_d: "Premium apartment in Sitges",
+        apt1_d: "Apartment in Sitges",
         apt2_t: "Village house in Sant Pere de Ribes",
         apt2_d: "Village house in the old town of Sant Pere de Ribes",
         apt3_t: "Farmhouse in Les Garrigues",
         apt3_d: "Sustainable rustic farmhouse in Les Garrigues",
-        serv_title: "Premium management services",
-        serv_sub: "We take care of every detail",
+        serv_title: "What we take care of",
+        serv_sub: "Day-to-day operations, so you don't have to stay on top of them",
         serv1_t: "Full management",
         serv1_d: "Complete administration of your property.",
         serv2_t: "Bookings",
@@ -926,45 +921,39 @@
         serv4_d: "Cleaning and preventive maintenance.",
         serv5_t: "In-house laundry",
         serv5_d: "Our own professional laundry service.",
-        con_title: "Contact",
-        con_sub: "We are here for you",
-        con_text: "We are a young team with experience and drive. We adapt to your needs and solve your vacation rental challenges. Call us and we will visit your property online or in person.",
+        con_title: "Request a free review",
+        con_sub: "We reply within 24 hours",
+        con_text: "Tell us the area of your home, whether it is licensed and whether it is already listed. We will tell you what can be improved and which plan fits best, with no obligation.",
         con_phone: "Phone",
         con_wa: "Send message",
-        footer_tag: "Premium vacation rental management"
+        footer_tag: "We manage your home like our own"
       }
     };
-
     function setLang(lang) {
       document.documentElement.lang = lang;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
       });
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     }
-
-    // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
-
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.toggle('active');
       mainNav.classList.toggle('open');
     });
-
-    // Cerrar menú al hacer clic en un enlace
     mainNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menuToggle.classList.remove('active');
         mainNav.classList.remove('open');
       });
     });
-
-    // Cerrar menú al redimensionar a desktop
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900) {
         menuToggle.classList.remove('active');
