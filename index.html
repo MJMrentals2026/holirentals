@@ -116,6 +116,16 @@
     .mod-card.premium ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
     .mod-card ul li:last-child { border-bottom: none; }
     .apartments { background: #111; }
+    .proof { margin-top: 48px; background: #161616; border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; padding: 32px; }
+    .proof h3 { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: 1.6rem; margin-bottom: 6px; }
+    .proof-specs { color: #999; margin-bottom: 20px; }
+    .proof-ratings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .proof-rating { border-left: 2px solid #D4AF37; padding-left: 14px; color: #ddd; }
+    .proof-rating strong { display: block; color: #fff; font-size: 1.15rem; }
+    .proof-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .proof-quotes blockquote { background: #111; border-radius: 6px; padding: 18px; color: #ccc; font-style: italic; font-size: 0.95rem; }
+    .proof-quotes cite { display: block; margin-top: 10px; color: #D4AF37; font-style: normal; font-size: 0.85rem; }
+    @media (max-width: 1000px) { .proof-ratings, .proof-quotes { grid-template-columns: 1fr; } }
     .apt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .apt-card { background: #161616; border-radius: 8px; overflow: hidden; border: 1px solid rgba(212,175,55,0.12); }
     .apt-photo { height: 210px; background: #1a1a1a; }
@@ -250,6 +260,19 @@
         <div class="apt-card"><div class="apt-photo"><img src="casaribes.jpg" alt="Casa Ribes"></div><div class="apt-info"><h3 data-i18n="apt2_t">Casa de pueblo en Sant Pere de Ribes</h3><p data-i18n="apt2_d">Casa de pueblo en casco urbano Sant Pere de Ribes</p></div></div>
         <div class="apt-card"><div class="apt-photo"><img src="fincalesgarrigues2.jpg" alt="Finca en Les Garrigues"></div><div class="apt-info"><h3 data-i18n="apt3_t">Finca en Les Garrigues</h3><p data-i18n="apt3_d">Finca rústica sostenible en Les Garrigues</p></div></div>
       </div>
+      <div class="proof" id="resultados">
+        <h3 data-i18n="proof_title">Ejemplo de resultados reales</h3>
+        <p class="proof-specs" data-i18n="proof_specs">Apartamento Sitges · 4 habitaciones · hasta 7 personas · 150 m²</p>
+        <div class="proof-ratings">
+          <div class="proof-rating"><strong data-i18n="proof_r1">4,87/5 Airbnb (53 reseñas)</strong><span data-i18n="proof_r1c">Llegada 5,0 · Comunicación 4,9</span></div>
+          <div class="proof-rating"><strong data-i18n="proof_r2">9,2/10 Booking (37 reseñas)</strong><span data-i18n="proof_r2c">Personal 9,6 · Confort 9,5</span></div>
+        </div>
+        <div class="proof-quotes">
+          <blockquote><span data-i18n="proof_q1">«El administrador nos recibió muy bien y con facilidades. Volveremos.»</span><cite>— Booking</cite></blockquote>
+          <blockquote><span data-i18n="proof_q2">«El anfitrión fue amable y atento.»</span><cite>— Airbnb</cite></blockquote>
+          <blockquote><span data-i18n="proof_q3">«El anfitrión muy puntual y servicial en todo momento. Anfitrión excelente y honesto.»</span><cite>— Airbnb</cite></blockquote>
+        </div>
+      </div>
     </div>
   </section>
   <section class="services" id="servicios">
@@ -309,6 +332,7 @@
         mod_prem: "Premium", mod_prem_p: "Servicio integral", mod_p1: "Todo lo de Standard", mod_p2: "Mantenimiento preventivo", mod_p3: "Fotografía profesional", mod_p4: "Reporting mensual", mod_p5: "Atención 24/7 prioritaria", mod_p6: "Ropa blanca premium",
         apt_title: "Viviendas que ya gestionamos", apt_sub: "Empezamos con nuestras propias propiedades. Esta es la operativa que aplicaremos a la tuya.",
         apt1_t: "Apartamento Sitges", apt1_d: "Apartamento en Sitges", apt2_t: "Casa de pueblo en Sant Pere de Ribes", apt2_d: "Casa de pueblo en casco urbano Sant Pere de Ribes", apt3_t: "Finca en Les Garrigues", apt3_d: "Finca rústica sostenible en Les Garrigues",
+        proof_title: "Ejemplo de resultados reales", proof_specs: "Apartamento Sitges · 4 habitaciones · hasta 7 personas · 150 m²", proof_r1: "4,87/5 Airbnb (53 reseñas)", proof_r1c: "Llegada 5,0 · Comunicación 4,9", proof_r2: "9,2/10 Booking (37 reseñas)", proof_r2c: "Personal 9,6 · Confort 9,5", proof_q1: "«El administrador nos recibió muy bien y con facilidades. Volveremos.»", proof_q2: "«El anfitrión fue amable y atento.»", proof_q3: "«El anfitrión muy puntual y servicial en todo momento. Anfitrión excelente y honesto.»",
         serv_title: "De qué nos ocupamos", serv_sub: "La operativa diaria, para que tú no tengas que estar pendiente",
         serv1_t: "Gestión integral", serv1_d: "Administración completa de tu propiedad.", serv2_t: "Reservas", serv2_d: "Optimización de precios y ocupación.", serv3_t: "Atención huésped", serv3_d: "Comunicación profesional 24/7.", serv4_t: "Mantenimiento", serv4_d: "Limpieza y mantenimiento preventivo.", serv5_t: "Lavandería propia", serv5_d: "Servicio propio de lavandería profesional.",
         con_title: "Pedir análisis gratuito", con_sub: "Te respondemos en menos de 24 horas",
@@ -338,6 +362,7 @@
         mod_prem: "Premium", mod_prem_p: "Full-service", mod_p1: "Everything in Standard", mod_p2: "Preventive maintenance", mod_p3: "Professional photography", mod_p4: "Monthly reporting", mod_p5: "Priority 24/7 support", mod_p6: "Premium linens",
         apt_title: "Homes we already manage", apt_sub: "We started with our own properties. This is the operation we will apply to yours.",
         apt1_t: "Sitges Apartment", apt1_d: "Apartment in Sitges", apt2_t: "Village house in Sant Pere de Ribes", apt2_d: "Village house in the old town of Sant Pere de Ribes", apt3_t: "Farmhouse in Les Garrigues", apt3_d: "Sustainable rustic farmhouse in Les Garrigues",
+        proof_title: "Real results example", proof_specs: "Sitges Apartment · 4 bedrooms · up to 7 guests · 150 m²", proof_r1: "4.87/5 Airbnb (53 reviews)", proof_r1c: "Check-in 5.0 · Communication 4.9", proof_r2: "9.2/10 Booking (37 reviews)", proof_r2c: "Staff 9.6 · Comfort 9.5", proof_q1: "“The manager welcomed us very warmly and made everything easy. We will be back.”", proof_q2: "“The host was kind and attentive.”", proof_q3: "“The host was very punctual and helpful at all times. An excellent and honest host.”",
         serv_title: "What we take care of", serv_sub: "Day-to-day operations, so you don't have to stay on top of them",
         serv1_t: "Full management", serv1_d: "Complete administration of your property.", serv2_t: "Bookings", serv2_d: "Price and occupancy optimisation.", serv3_t: "Guest support", serv3_d: "Professional communication 24/7.", serv4_t: "Maintenance", serv4_d: "Cleaning and preventive maintenance.", serv5_t: "In-house laundry", serv5_d: "Our own professional laundry service.",
         con_title: "Request a free review", con_sub: "We reply within 24 hours",
