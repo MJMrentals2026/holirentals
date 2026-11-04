@@ -5,14 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Holirentals | Pisos turísticos en Garraf, Penedès y Cantabria</title>
   <meta name="description" content="Gestionamos tu piso como el nuestro. Alquiler vacacional en Garraf, Penedès y Baix Llobregat, además de Cantabria y Bizkaia. Pide tu análisis gratuito.">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MFDEXBBM13"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MFDEXBBM13');
-</script>
+  <!-- Google Analytics 4 (G-MFDEXBBM13) con Consent Mode v2: solo se carga si se aceptan las cookies. Ver /consent.js -->
+  <script src="/consent.js"></script>
   <!-- Schema LocalBusiness -->
   <script type="application/ld+json">
   {
@@ -144,6 +138,9 @@
     footer { background: #0a0a0a; padding: 36px 0; border-top: 1px solid rgba(212,175,55,0.12); text-align: center; }
     footer p { color: #666; font-size: 0.9rem; }
     footer .gold { color: #D4AF37; }
+    footer .legal-links { margin-top: 10px; font-size: 0.85rem; }
+    footer .legal-links a { color: #888; text-decoration: none; transition: color 0.25s; }
+    footer .legal-links a:hover { color: #D4AF37; }
     @media (max-width: 1000px) { .mod-grid, .apt-grid { grid-template-columns: 1fr; } .services-grid { grid-template-columns: repeat(3, 1fr); } .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 900px) {
       .menu-toggle { display: flex; }
@@ -285,6 +282,7 @@
     <div class="container">
       <p><span class="gold">Holirentals</span> · <span data-i18n="footer_tag">Gestionamos tu piso como el nuestro</span></p>
       <p style="margin-top:8px">Garraf · Penedès · Baix Llobregat · Cantabria · Bizkaia</p>
+      <p class="legal-links"><a href="/aviso-legal/" data-i18n="footer_legal">Aviso legal</a> · <a href="/privacidad/" data-i18n="footer_privacy">Privacidad</a> · <a href="/cookies/" data-i18n="footer_cookies">Cookies</a></p>
     </div>
   </footer>
   <script>
@@ -315,7 +313,8 @@
         serv1_t: "Gestión integral", serv1_d: "Administración completa de tu propiedad.", serv2_t: "Reservas", serv2_d: "Optimización de precios y ocupación.", serv3_t: "Atención huésped", serv3_d: "Comunicación profesional 24/7.", serv4_t: "Mantenimiento", serv4_d: "Limpieza y mantenimiento preventivo.", serv5_t: "Lavandería propia", serv5_d: "Servicio propio de lavandería profesional.",
         con_title: "Pedir análisis gratuito", con_sub: "Te respondemos en menos de 24 horas",
         con_text: "Cuéntanos la zona de tu vivienda, si tiene licencia y si ya está publicada. Te decimos qué se puede mejorar y qué paquete encaja mejor, sin compromiso.",
-        con_phone: "Teléfono", con_wa: "Enviar mensaje", footer_tag: "Gestionamos tu piso como el nuestro"
+        con_phone: "Teléfono", con_wa: "Enviar mensaje", footer_tag: "Gestionamos tu piso como el nuestro",
+        footer_legal: "Aviso legal", footer_privacy: "Privacidad", footer_cookies: "Cookies"
       },
       en: {
         nav_home: "Home", nav_benefits: "Benefits", nav_about: "About", nav_destinations: "Destinations", nav_management: "Management", nav_apartments: "Apartments", nav_services: "Services", nav_contact: "Contact",
@@ -343,7 +342,8 @@
         serv1_t: "Full management", serv1_d: "Complete administration of your property.", serv2_t: "Bookings", serv2_d: "Price and occupancy optimisation.", serv3_t: "Guest support", serv3_d: "Professional communication 24/7.", serv4_t: "Maintenance", serv4_d: "Cleaning and preventive maintenance.", serv5_t: "In-house laundry", serv5_d: "Our own professional laundry service.",
         con_title: "Request a free review", con_sub: "We reply within 24 hours",
         con_text: "Tell us the area of your home, whether it is licensed and whether it is already listed. We will tell you what can be improved and which plan fits best, with no obligation.",
-        con_phone: "Phone", con_wa: "Send message", footer_tag: "We manage your home like our own"
+        con_phone: "Phone", con_wa: "Send message", footer_tag: "We manage your home like our own",
+        footer_legal: "Legal notice", footer_privacy: "Privacy", footer_cookies: "Cookies"
       }
     };
     function setLang(lang) {
