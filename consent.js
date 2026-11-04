@@ -88,8 +88,13 @@
     b.id = 'hr-cookie-banner';
     b.setAttribute('role', 'dialog');
     b.setAttribute('aria-live', 'polite');
-    b.setAttribute('aria-label', 'Aviso de cookies');
-    b.innerHTML =
+    var en = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+    b.setAttribute('aria-label', en ? 'Cookie notice' : 'Aviso de cookies');
+    b.innerHTML = en ?
+      '<p>We use necessary first-party cookies and, only if you accept, analytics cookies (Google Analytics) to understand how the website is used. ' +
+      'You can change your choice at any time. <a href="/en/cookies/">More information</a>.</p>' +
+      '<div class="hr-cb-btns"><button type="button" class="hr-cb-reject">Reject</button>' +
+      '<button type="button" class="hr-cb-accept">Accept</button></div>' :
       '<p>Usamos cookies propias necesarias y, solo si lo aceptas, cookies de analítica (Google Analytics) para saber cómo se usa la web. ' +
       'Puedes cambiar tu elección cuando quieras. <a href="/cookies/">Más información</a>.</p>' +
       '<div class="hr-cb-btns"><button type="button" class="hr-cb-reject">Rechazar</button>' +

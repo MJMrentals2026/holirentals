@@ -6,6 +6,24 @@
   <title>Holirentals | Pisos turísticos en Garraf, Penedès y Cantabria</title>
   <meta name="description" content="Gestionamos tu piso como el nuestro. Alquiler vacacional en Garraf, Penedès y Baix Llobregat, además de Cantabria y Bizkaia. Pide tu análisis gratuito.">
   <!-- Google Analytics 4 (G-MFDEXBBM13) con Consent Mode v2: solo se carga si se aceptan las cookies. Ver /consent.js -->
+  <link rel="canonical" href="https://holirentals.com/">
+  <link rel="alternate" hreflang="es" href="https://holirentals.com/">
+  <link rel="alternate" hreflang="en" href="https://holirentals.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://holirentals.com/">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Holirentals">
+  <meta property="og:title" content="Holirentals | Pisos turísticos en Garraf, Penedès y Cantabria">
+  <meta property="og:description" content="Gestionamos tu piso como el nuestro. Alquiler vacacional en Garraf, Penedès y Baix Llobregat, además de Cantabria y Bizkaia. Pide tu análisis gratuito.">
+  <meta property="og:url" content="https://holirentals.com/">
+  <meta property="og:image" content="https://holirentals.com/logo.png">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Holirentals | Pisos turísticos en Garraf, Penedès y Cantabria">
+  <meta name="twitter:description" content="Gestionamos tu piso como el nuestro. Alquiler vacacional en Garraf, Penedès y Baix Llobregat, además de Cantabria y Bizkaia. Pide tu análisis gratuito.">
+  <meta name="twitter:image" content="https://holirentals.com/logo.png">
   <script src="/consent.js"></script>
   <!-- Schema LocalBusiness -->
   <script type="application/ld+json">
@@ -59,6 +77,8 @@
     nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.25s ease; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
     nav a:hover, nav a.active { color: #D4AF37; }
     .lang-switch { display: flex; gap: 8px; margin-left: 8px; }
+    .lang-switch a { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 5px 11px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .lang-switch a.active, .lang-switch a:hover { background: #D4AF37; border-color: #D4AF37; color: #0d0d0d; }
     .lang-switch button { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 5px 11px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.25s; }
     .lang-switch button.active, .lang-switch button:hover { background: #D4AF37; border-color: #D4AF37; color: #0d0d0d; }
     .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -184,8 +204,8 @@
         <a href="#servicios" data-i18n="nav_services">Servicios</a>
         <a href="#contacto" data-i18n="nav_contact">Contacto</a>
         <div class="lang-switch">
-          <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
-          <button id="btn-en" onclick="setLang('en')">EN</button>
+          <a id="btn-es" class="active" href="/" hreflang="es" lang="es">ES</a>
+          <a id="btn-en" class="" href="/en/" hreflang="en" lang="en">EN</a>
         </div>
       </nav>
     </div>

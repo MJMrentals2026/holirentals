@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holirentals | Holiday rental management in Garraf, Penedès and Cantabria</title>
+  <meta name="description" content="We manage your home like our own. Holiday rental management in Garraf, Penedès and Baix Llobregat, as well as Cantabria and Bizkaia. Request a free review.">
+  <!-- Google Analytics 4 (G-MFDEXBBM13) with Consent Mode v2: loads only if cookies are accepted. Ver /consent.js -->
+  <link rel="canonical" href="https://holirentals.com/en/">
+  <link rel="alternate" hreflang="es" href="https://holirentals.com/">
+  <link rel="alternate" hreflang="en" href="https://holirentals.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://holirentals.com/">
+  <link rel="icon" href="/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Holirentals">
+  <meta property="og:title" content="Holirentals | Holiday rental management in Garraf, Penedès and Cantabria">
+  <meta property="og:description" content="We manage your home like our own. Holiday rental management in Garraf, Penedès and Baix Llobregat, as well as Cantabria and Bizkaia. Request a free review.">
+  <meta property="og:url" content="https://holirentals.com/en/">
+  <meta property="og:image" content="https://holirentals.com/logo.png">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Holirentals | Holiday rental management in Garraf, Penedès and Cantabria">
+  <meta name="twitter:description" content="We manage your home like our own. Holiday rental management in Garraf, Penedès and Baix Llobregat, as well as Cantabria and Bizkaia. Request a free review.">
+  <meta name="twitter:image" content="https://holirentals.com/logo.png">
+  <script src="/consent.js"></script>
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Holirentals",
+    "description": "We manage your home like our own. Holiday rental management in Garraf, Alt Penedès, Baix Penedès and Baix Llobregat, as well as Cantabria and Bizkaia. Bookings, guests and operations handled by us.",
+    "url": "https://holirentals.com/en/",
+    "telephone": "+34622448517",
+    "email": "info@holirentals.com",
+    "image": "https://holirentals.com/logo.png",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ES",
+      "addressRegion": "Cataluña"
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Garraf" },
+      { "@type": "AdministrativeArea", "name": "Alt Penedès" },
+      { "@type": "AdministrativeArea", "name": "Baix Penedès" },
+      { "@type": "AdministrativeArea", "name": "Baix Llobregat" },
+      { "@type": "AdministrativeArea", "name": "Cantabria" },
+      { "@type": "AdministrativeArea", "name": "Bizkaia" }
+    ],
+    "sameAs": [],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: #e8e8e8; background: #0d0d0d; line-height: 1.7; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(212, 175, 55, 0.15); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 100px; }
+    .logo { height: 92px; width: auto; }
+    .menu-toggle { display: none; flex-direction: column; justify-content: space-between; width: 28px; height: 20px; background: none; border: none; cursor: pointer; padding: 0; z-index: 1001; }
+    .menu-toggle span { display: block; height: 2.5px; width: 100%; background: #D4AF37; border-radius: 2px; transition: all 0.3s ease; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-8.5px) rotate(-45deg); }
+    nav { display: flex; align-items: center; gap: 26px; }
+    nav a { color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.25s ease; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+    nav a:hover, nav a.active { color: #D4AF37; }
+    .lang-switch { display: flex; gap: 8px; margin-left: 8px; }
+    .lang-switch a { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 5px 11px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.25s; }
+    .lang-switch a.active, .lang-switch a:hover { background: #D4AF37; border-color: #D4AF37; color: #0d0d0d; }
+    .lang-switch button { background: transparent; border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 5px 11px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.25s; }
+    .lang-switch button.active, .lang-switch button:hover { background: #D4AF37; border-color: #D4AF37; color: #0d0d0d; }
+    .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)); z-index: 2; }
+    .hero-content { position: relative; z-index: 3; text-align: center; max-width: 800px; padding: 0 20px; }
+    .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.1rem, 5vw, 3.6rem); color: #fff; margin-bottom: 18px; line-height: 1.2; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+    .hero-content p { font-size: 1.15rem; color: rgba(255,255,255,0.9); margin-bottom: 18px; font-weight: 300; }
+    .hero-content .hero-subtitle { margin-bottom: 36px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn { display: inline-block; padding: 14px 32px; background: #D4AF37; color: #0d0d0d; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 3px; transition: all 0.3s ease; cursor: pointer; border: none; }
+    .btn:hover { background: #c9a227; transform: translateY(-2px); }
+    .btn-outline { background: transparent; border: 1.5px solid #D4AF37; color: #D4AF37; }
+    .btn-outline:hover { background: #D4AF37; color: #0d0d0d; }
+    section { padding: 90px 0; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #D4AF37; text-align: center; margin-bottom: 14px; }
+    .section-subtitle { text-align: center; color: #999; max-width: 600px; margin: 0 auto 50px; font-size: 1.05rem; }
+    .benefits { background: #111; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .benefit-card { border-radius: 8px; padding: 36px 24px; text-align: center; transition: transform 0.3s; }
+    .benefit-card:hover { transform: translateY(-4px); }
+    .benefit-card:nth-child(1) { background: #d6eaf8; border: 1px solid #a9cce3; color: #1a1a1a; }
+    .benefit-card:nth-child(2) { background: #f5e6e8; border: 1px solid #e8c5cb; color: #1a1a1a; }
+    .benefit-card:nth-child(3) { background: #f5f0e6; border: 1px solid #e0d5c0; color: #1a1a1a; }
+    .benefit-card:nth-child(4) { background: #d0d0d0; border: 1px solid #b0b0b0; color: #1a1a1a; }
+    .benefit-number { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: #1a1a1a; font-weight: 600; margin-bottom: 8px; line-height: 1.1; }
+    .benefit-title { font-size: 1.15rem; color: #1a1a1a; font-weight: 600; margin-bottom: 12px; }
+    .benefit-text { font-size: 0.92rem; color: #444; line-height: 1.5; }
+    .nosotros { background: #0d0d0d; }
+    .nosotros-text { max-width: 760px; margin: 0 auto 28px; color: #ccc; font-size: 1.05rem; line-height: 1.8; text-align: center; }
+    .nosotros-text p { margin-bottom: 16px; }
+    .nosotros-cta { text-align: center; }
+    .destinations { background: #111; }
+    .dest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .dest-card { position: relative; height: 300px; border-radius: 8px; overflow: hidden; background: #1a1a1a; border: 1px solid rgba(212,175,55,0.15); }
+    .dest-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .dest-card:hover img { transform: scale(1.05); }
+    .dest-name { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 22px; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); color: #fff; font-size: 1.25rem; font-weight: 600; }
+    .modalities { background: #0d0d0d; }
+    .mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .mod-card { border-radius: 8px; padding: 36px 28px; text-align: center; }
+    .mod-card.basic { background: #d6eaf8; border: 1px solid #a9cce3; color: #1a1a1a; }
+    .mod-card.standard { background: #f5e6e8; border: 1px solid #e8c5cb; color: #1a1a1a; }
+    .mod-card.premium { background: #2c2c2c; border: 1px solid #D4AF37; color: #e8e8e8; }
+    .mod-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; }
+    .mod-card.basic h3, .mod-card.standard h3 { color: #1a1a1a; }
+    .mod-card.premium h3 { color: #D4AF37; }
+    .mod-card .price { font-size: 0.9rem; margin-bottom: 22px; }
+    .mod-card.basic .price, .mod-card.standard .price { color: #555; }
+    .mod-card.premium .price { color: #aaa; }
+    .mod-card ul { list-style: none; text-align: left; font-size: 0.95rem; }
+    .mod-card.basic ul, .mod-card.standard ul { color: #333; }
+    .mod-card.premium ul { color: #ccc; }
+    .mod-card ul li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+    .mod-card.premium ul li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mod-card ul li:last-child { border-bottom: none; }
+    .apartments { background: #111; }
+    .proof { margin-top: 48px; background: #161616; border: 1px solid rgba(212,175,55,0.25); border-radius: 8px; padding: 32px; }
+    .proof h3 { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: 1.6rem; margin-bottom: 6px; }
+    .proof-specs { color: #999; margin-bottom: 20px; }
+    .proof-ratings { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .proof-rating { border-left: 2px solid #D4AF37; padding-left: 14px; color: #ddd; }
+    .proof-rating strong { display: block; color: #fff; font-size: 1.15rem; }
+    .proof-quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+    .proof-quotes blockquote { background: #111; border-radius: 6px; padding: 18px; color: #ccc; font-style: italic; font-size: 0.95rem; }
+    .proof-quotes cite { display: block; margin-top: 10px; color: #D4AF37; font-style: normal; font-size: 0.85rem; }
+    @media (max-width: 1000px) { .proof-ratings, .proof-quotes { grid-template-columns: 1fr; } }
+    .apt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .apt-card { background: #161616; border-radius: 8px; overflow: hidden; border: 1px solid rgba(212,175,55,0.12); }
+    .apt-photo { height: 210px; background: #1a1a1a; }
+    .apt-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .apt-info { padding: 22px; }
+    .apt-info h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
+    .apt-info p { color: #999; font-size: 0.95rem; }
+    .services { background: #0d0d0d; }
+    .services-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .service-card { text-align: center; padding: 26px 14px; background: #161616; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+    .service-icon { width: 40px; height: 40px; margin: 0 auto 14px; stroke: #D4AF37; fill: none; stroke-width: 1.5; }
+    .service-card h3 { font-size: 0.98rem; color: #fff; margin-bottom: 8px; font-weight: 600; }
+    .service-card p { color: #999; font-size: 0.82rem; line-height: 1.45; }
+    .contact { background: #111; text-align: center; }
+    .contact-methods { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
+    .contact-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .contact-item span { color: #888; font-size: 0.9rem; }
+    .contact-item a { color: #D4AF37; text-decoration: none; font-size: 1.3rem; font-weight: 600; transition: color 0.25s; }
+    .contact-item a:hover { color: #fff; }
+    footer { background: #0a0a0a; padding: 36px 0; border-top: 1px solid rgba(212,175,55,0.12); text-align: center; }
+    footer p { color: #666; font-size: 0.9rem; }
+    footer .gold { color: #D4AF37; }
+    footer .legal-links { margin-top: 10px; font-size: 0.85rem; }
+    footer .legal-links a { color: #888; text-decoration: none; transition: color 0.25s; }
+    footer .legal-links a:hover { color: #D4AF37; }
+    @media (max-width: 1000px) { .mod-grid, .apt-grid { grid-template-columns: 1fr; } .services-grid { grid-template-columns: repeat(3, 1fr); } .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 900px) {
+      .menu-toggle { display: flex; }
+      nav { position: fixed; top: 0; right: -100%; width: min(320px, 85vw); height: 100vh; background: rgba(10, 10, 10, 0.97); backdrop-filter: blur(20px); flex-direction: column; justify-content: center; align-items: center; gap: 28px; transition: right 0.35s ease; border-left: 1px solid rgba(212, 175, 55, 0.2); z-index: 1000; }
+      nav.open { right: 0; }
+      nav a { font-size: 1.15rem; }
+      .lang-switch { margin-left: 0; margin-top: 12px; }
+    }
+    @media (max-width: 700px) {
+      .header-inner { height: 72px; } .logo { height: 58px; } .container { padding: 0 18px; } section { padding: 60px 0; }
+      .section-title { font-size: 1.7rem; } .section-subtitle { font-size: 0.98rem; margin-bottom: 36px; }
+      .dest-grid { grid-template-columns: 1fr; } .services-grid { grid-template-columns: repeat(2, 1fr); } .benefits-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 520px; } .hero-content p { font-size: 1.05rem; } .btn { padding: 13px 26px; font-size: 14px; }
+      .dest-card { height: 240px; } .contact-methods { gap: 32px; } .contact-item a { font-size: 1.15rem; }
+    }
+    @media (max-width: 480px) { .services-grid { grid-template-columns: 1fr; } .hero-content h1 { font-size: 1.9rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <img src="/logo.png" alt="Holirentals" class="logo">
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <nav id="mainNav">
+        <a href="#inicio" class="active" data-i18n="nav_home">Home</a>
+        <a href="#beneficios" data-i18n="nav_benefits">Benefits</a>
+        <a href="#nosotros" data-i18n="nav_about">About</a>
+        <a href="#destinos" data-i18n="nav_destinations">Destinations</a>
+        <a href="#modalidades" data-i18n="nav_management">Management</a>
+        <a href="#apartamentos" data-i18n="nav_apartments">Apartments</a>
+        <a href="#servicios" data-i18n="nav_services">Services</a>
+        <a href="#contacto" data-i18n="nav_contact">Contact</a>
+        <div class="lang-switch">
+          <a id="btn-es" class="" href="/" hreflang="es" lang="es">ES</a>
+          <a id="btn-en" class="active" href="/en/" hreflang="en" lang="en">EN</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" id="inicio">
+    <video autoplay muted loop playsinline><source src="/bg.mp4" type="video/mp4"></video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">We manage your home like our own.</h1>
+      <p>Garraf · Penedès · Baix Llobregat · Cantabria · Bizkaia</p>
+      <p class="hero-subtitle" data-i18n-html="hero_subtitle">Bookings, guests and operations handled by us.<br>You get the return and a clear report.</p>
+      <div class="hero-buttons">
+        <a href="https://onyx-orbit-winter-zest.grok.me/" class="btn" data-i18n="hero_btn1" target="_blank" rel="noopener">Request a free review</a>
+        <a href="https://wa.me/34622448517" class="btn btn-outline" data-i18n="hero_btn2">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <h2 class="section-title" data-i18n="ben_title">Why outsource your property management?</h2>
+      <p class="section-subtitle" data-i18n="ben_sub">Less admin for you. More control and clarity over your home.</p>
+      <div class="benefits-grid">
+        <div class="benefit-card"><div class="benefit-number" data-i18n="ben1_n">Pricing</div><div class="benefit-title" data-i18n="ben1_t">Better positioned</div><div class="benefit-text" data-i18n="ben1_d">We adjust rates and calendars to improve occupancy and income.</div></div>
+        <div class="benefit-card"><div class="benefit-number" data-i18n="ben2_n">Channels</div><div class="benefit-title" data-i18n="ben2_t">More visibility</div><div class="benefit-text" data-i18n="ben2_d">We list and sync your home on the main platforms.</div></div>
+        <div class="benefit-card"><div class="benefit-number" data-i18n="ben3_n">Guests</div><div class="benefit-title" data-i18n="ben3_t">Direct support</div><div class="benefit-text" data-i18n="ben3_d">We handle bookings and issues so you don't have to stay on call.</div></div>
+        <div class="benefit-card"><div class="benefit-number" data-i18n="ben4_n">Time</div><div class="benefit-title" data-i18n="ben4_t">Less paperwork</div><div class="benefit-text" data-i18n="ben4_d">We run the day-to-day and send you a clear report.</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="nosotros" id="nosotros">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">Who we are</h2>
+      <p class="section-subtitle" data-i18n="about_sub">Owners managing homes the way we manage our own.</p>
+      <div class="nosotros-text">
+        <p data-i18n="about_p1">We are owners. We manage our own holiday homes and apply the same operation to the ones entrusted to us.</p>
+        <p data-i18n="about_p2">We are not an agency with dozens of properties. We prefer a small portfolio, direct attention, and that you speak with the person who decides.</p>
+        <p data-i18n="about_p3">We work in Garraf, Alt Penedès, Baix Penedès and Baix Llobregat (Catalonia), as well as Cantabria and Bizkaia. We handle listings, bookings, guest communication and, depending on the plan, check-in, cleaning and maintenance.</p>
+        <p data-i18n="about_p4">If you want a large platform, there are other options. If you want your home managed with the same care as ours, let's talk.</p>
+      </div>
+      <div class="nosotros-cta">
+        <a href="https://onyx-orbit-winter-zest.grok.me/" class="btn" data-i18n="hero_btn1" target="_blank" rel="noopener">Request a free review</a>
+      </div>
+    </div>
+  </section>
+  <section class="destinations" id="destinos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="dest_title">Our destinations</h2>
+      <p class="section-subtitle" data-i18n="dest_sub">Areas where we manage holiday homes</p>
+      <div class="dest-grid">
+        <div class="dest-card"><img src="/garraf.jpg" alt="Garraf coast"><div class="dest-name">Garraf · Penedès · Baix Llobregat</div></div>
+        <div class="dest-card"><img src="/cantabria.jpg" alt="Cantabria coast"><div class="dest-name">Cantabria · Bizkaia</div></div>
+      </div>
+    </div>
+  </section>
+  <section class="modalities" id="modalidades">
+    <div class="container">
+      <h2 class="section-title" data-i18n="mod_title">Management plans</h2>
+      <p class="section-subtitle" data-i18n="mod_sub">Choose the service level that best fits your property</p>
+      <div class="mod-grid">
+        <div class="mod-card basic"><h3 data-i18n="mod_basic">Basic</h3><div class="price" data-i18n="mod_basic_p">Essential management</div><ul><li data-i18n="mod_b1">Listing on platforms</li><li data-i18n="mod_b2">Booking management</li><li data-i18n="mod_b3">Synced calendar</li><li data-i18n="mod_b4">Basic online guest support</li></ul></div>
+        <div class="mod-card standard"><h3 data-i18n="mod_std">Standard</h3><div class="price" data-i18n="mod_std_p">Most popular</div><ul><li data-i18n="mod_s1">Everything in Basic</li><li data-i18n="mod_s2">Check-in / Check-out</li><li data-i18n="mod_s3">Professional cleaning</li><li data-i18n="mod_s4">Price optimisation</li><li data-i18n="mod_s5">Full guest communication</li></ul></div>
+        <div class="mod-card premium"><h3 data-i18n="mod_prem">Premium</h3><div class="price" data-i18n="mod_prem_p">Full-service</div><ul><li data-i18n="mod_p1">Everything in Standard</li><li data-i18n="mod_p2">Preventive maintenance</li><li data-i18n="mod_p3">Professional photography</li><li data-i18n="mod_p4">Monthly reporting</li><li data-i18n="mod_p5">Priority 24/7 support</li><li data-i18n="mod_p6">Premium linens</li></ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="apartments" id="apartamentos">
+    <div class="container">
+      <h2 class="section-title" data-i18n="apt_title">Homes we already manage</h2>
+      <p class="section-subtitle" data-i18n="apt_sub">We started with our own properties. This is the operation we will apply to yours.</p>
+      <div class="apt-grid">
+        <div class="apt-card"><div class="apt-photo"><img src="/apartamentositges.jpg" alt="Sitges apartment"></div><div class="apt-info"><h3 data-i18n="apt1_t">Sitges Apartment</h3><p data-i18n="apt1_d">Apartment in Sitges</p></div></div>
+        <div class="apt-card"><div class="apt-photo"><img src="/casaribes.jpg" alt="Village house in Sant Pere de Ribes"></div><div class="apt-info"><h3 data-i18n="apt2_t">Village house in Sant Pere de Ribes</h3><p data-i18n="apt2_d">Village house in the old town of Sant Pere de Ribes</p></div></div>
+        <div class="apt-card"><div class="apt-photo"><img src="/fincalesgarrigues2.jpg" alt="Farmhouse in Les Garrigues"></div><div class="apt-info"><h3 data-i18n="apt3_t">Farmhouse in Les Garrigues</h3><p data-i18n="apt3_d">Sustainable rustic farmhouse in Les Garrigues</p></div></div>
+      </div>
+      <div class="proof" id="resultados">
+        <h3 data-i18n="proof_title">Real results example</h3>
+        <p class="proof-specs" data-i18n="proof_specs">Sitges Apartment · 4 bedrooms · up to 7 guests · 150 m²</p>
+        <div class="proof-ratings">
+          <div class="proof-rating"><strong data-i18n="proof_r1">4.87/5 Airbnb (53 reviews)</strong><span data-i18n="proof_r1c">Check-in 5.0 · Communication 4.9</span></div>
+          <div class="proof-rating"><strong data-i18n="proof_r2">9.2/10 Booking (37 reviews)</strong><span data-i18n="proof_r2c">Staff 9.6 · Comfort 9.5</span></div>
+        </div>
+        <div class="proof-quotes">
+          <blockquote><span data-i18n="proof_q1">“The manager welcomed us very warmly and made everything easy. We will be back.”</span><cite>— Booking</cite></blockquote>
+          <blockquote><span data-i18n="proof_q2">“The host was kind and attentive.”</span><cite>— Airbnb</cite></blockquote>
+          <blockquote><span data-i18n="proof_q3">“The host was very punctual and helpful at all times. An excellent and honest host.”</span><cite>— Airbnb</cite></blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="services" id="servicios">
+    <div class="container">
+      <h2 class="section-title" data-i18n="serv_title">What we take care of</h2>
+      <p class="section-subtitle" data-i18n="serv_sub">Day-to-day operations, so you don't have to stay on top of them</p>
+      <div class="services-grid">
+        <div class="service-card"><svg class="service-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><h3 data-i18n="serv1_t">Full management</h3><p data-i18n="serv1_d">Complete administration of your property.</p></div>
+        <div class="service-card"><svg class="service-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><h3 data-i18n="serv2_t">Bookings</h3><p data-i18n="serv2_d">Price and occupancy optimisation.</p></div>
+        <div class="service-card"><svg class="service-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><h3 data-i18n="serv3_t">Guest support</h3><p data-i18n="serv3_d">Professional communication 24/7.</p></div>
+        <div class="service-card"><svg class="service-icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><h3 data-i18n="serv4_t">Maintenance</h3><p data-i18n="serv4_d">Cleaning and preventive maintenance.</p></div>
+        <div class="service-card"><svg class="service-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="5"/></svg><h3 data-i18n="serv5_t">In-house laundry</h3><p data-i18n="serv5_d">Our own professional laundry service.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title" data-i18n="con_title">Request a free review</h2>
+      <p class="section-subtitle" data-i18n="con_sub">We reply within 24 hours</p>
+      <p style="max-width: 640px; margin: 0 auto 40px; color: #bbb; font-size: 1.05rem; line-height: 1.7;" data-i18n="con_text">Tell us the area of your home, whether it is licensed and whether it is already listed. We will tell you what can be improved and which plan fits best, with no obligation.</p>
+      <p style="margin: 0 auto 36px;"><a href="https://onyx-orbit-winter-zest.grok.me/" class="btn" target="_blank" rel="noopener">Abrir calculadora</a></p>
+      <div class="contact-methods">
+        <div class="contact-item"><span data-i18n="con_phone">Phone</span><a href="tel:+34622448517">+34 622 448 517</a></div>
+        <div class="contact-item"><span>WhatsApp</span><a href="https://wa.me/34622448517" target="_blank" data-i18n="con_wa">Send message</a></div>
+        <div class="contact-item"><span>Email</span><a href="mailto:info@holirentals.com">info@holirentals.com</a></div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p><span class="gold">Holirentals</span> · <span data-i18n="footer_tag">We manage your home like our own</span></p>
+      <p style="margin-top:8px">Garraf · Penedès · Baix Llobregat · Cantabria · Bizkaia</p>
+      <p class="legal-links"><a href="/en/legal-notice/" data-i18n="footer_legal">Legal notice</a> · <a href="/en/privacy/" data-i18n="footer_privacy">Privacy</a> · <a href="/en/cookies/" data-i18n="footer_cookies">Cookies</a></p>
+    </div>
+  </footer>
+  <script>
+    const translations = {
+      es: {
+        nav_home: "Inicio", nav_benefits: "Beneficios", nav_about: "Nosotros", nav_destinations: "Destinos", nav_management: "Gestión", nav_apartments: "Apartamentos", nav_services: "Servicios", nav_contact: "Contacto",
+        hero_title: "Gestionamos tu piso como el nuestro.",
+        hero_subtitle: "Reservas, huéspedes y operativa, a cargo nuestro.<br>Tú recibes el rendimiento y un informe claro.",
+        hero_btn1: "Pedir análisis gratuito", hero_btn2: "WhatsApp",
+        ben_title: "¿Por qué delegar la gestión de tu vivienda?", ben_sub: "Menos gestiones para ti. Más control y claridad sobre tu vivienda.",
+        ben1_n: "Precios", ben1_t: "Mejor posicionados", ben1_d: "Ajustamos tarifas y calendarios para mejorar ocupación e ingresos.",
+        ben2_n: "Canales", ben2_t: "Más visibilidad", ben2_d: "Publicamos y sincronizamos tu vivienda en las principales plataformas.",
+        ben3_n: "Huéspedes", ben3_t: "Atención directa", ben3_d: "Respondemos reservas e incidencias para que tú no estés pendiente.",
+        ben4_n: "Tiempo", ben4_t: "Menos trámites", ben4_d: "Nos ocupamos de la operativa diaria y te enviamos un informe claro.",
+        about_title: "Quiénes somos", about_sub: "Propietarios que gestionamos viviendas como las nuestras.",
+        about_p1: "Somos propietarios. Gestionamos nuestras propias viviendas turísticas y aplicamos la misma operativa a las que nos confían.",
+        about_p2: "No somos una agencia de decenas de pisos. Preferimos pocas viviendas, atención directa y que hables con quien decide.",
+        about_p3: "Trabajamos en el Garraf, el Alt Penedès, el Baix Penedès y el Baix Llobregat, y también en Cantabria y Bizkaia. Nos ocupamos de anuncios, reservas, comunicación con el huésped y, según el paquete, de check-in, limpieza y mantenimiento.",
+        about_p4: "Si buscas una plataforma grande, hay otras opciones. Si quieres que tu piso se gestione con el mismo cuidado que el nuestro, hablemos.",
+        dest_title: "Nuestros destinos", dest_sub: "Zonas donde gestionamos viviendas turísticas",
+        mod_title: "Modalidades de gestión", mod_sub: "Elige el nivel de servicio que mejor se adapta a tu propiedad",
+        mod_basic: "Básica", mod_basic_p: "Gestión esencial", mod_b1: "Publicación en plataformas", mod_b2: "Gestión de reservas", mod_b3: "Calendario sincronizado", mod_b4: "Atención básica al huésped on line",
+        mod_std: "Standard", mod_std_p: "La más elegida", mod_s1: "Todo lo de Básica", mod_s2: "Check-in / Check-out", mod_s3: "Limpieza profesional", mod_s4: "Optimización de precios", mod_s5: "Comunicación completa con el huésped",
+        mod_prem: "Premium", mod_prem_p: "Servicio integral", mod_p1: "Todo lo de Standard", mod_p2: "Mantenimiento preventivo", mod_p3: "Fotografía profesional", mod_p4: "Reporting mensual", mod_p5: "Atención 24/7 prioritaria", mod_p6: "Ropa blanca premium",
+        apt_title: "Viviendas que ya gestionamos", apt_sub: "Empezamos con nuestras propias propiedades. Esta es la operativa que aplicaremos a la tuya.",
+        apt1_t: "Sitges apartment", apt1_d: "Apartamento en Sitges", apt2_t: "Casa de pueblo en Sant Pere de Ribes", apt2_d: "Casa de pueblo en casco urbano Sant Pere de Ribes", apt3_t: "Farmhouse in Les Garrigues", apt3_d: "Finca rústica sostenible en Les Garrigues",
+        proof_title: "Ejemplo de resultados reales", proof_specs: "Apartamento Sitges · 4 habitaciones · hasta 7 personas · 150 m²", proof_r1: "4,87/5 Airbnb (53 reseñas)", proof_r1c: "Llegada 5,0 · Comunicación 4,9", proof_r2: "9,2/10 Booking (37 reseñas)", proof_r2c: "Personal 9,6 · Confort 9,5", proof_q1: "«El administrador nos recibió muy bien y con facilidades. Volveremos.»", proof_q2: "«El anfitrión fue amable y atento.»", proof_q3: "«El anfitrión muy puntual y servicial en todo momento. Anfitrión excelente y honesto.»",
+        serv_title: "De qué nos ocupamos", serv_sub: "La operativa diaria, para que tú no tengas que estar pendiente",
+        serv1_t: "Gestión integral", serv1_d: "Administración completa de tu propiedad.", serv2_t: "Reservas", serv2_d: "Optimización de precios y ocupación.", serv3_t: "Atención huésped", serv3_d: "Comunicación profesional 24/7.", serv4_t: "Mantenimiento", serv4_d: "Limpieza y mantenimiento preventivo.", serv5_t: "Lavandería propia", serv5_d: "Servicio propio de lavandería profesional.",
+        con_title: "Pedir análisis gratuito", con_sub: "Te respondemos en menos de 24 horas",
+        con_text: "Cuéntanos la zona de tu vivienda, si tiene licencia y si ya está publicada. Te decimos qué se puede mejorar y qué paquete encaja mejor, sin compromiso.",
+        con_phone: "Teléfono", con_wa: "Enviar mensaje", footer_tag: "Gestionamos tu piso como el nuestro",
+        footer_legal: "Aviso legal", footer_privacy: "Privacidad", footer_cookies: "Cookies"
+      },
+      en: {
+        nav_home: "Home", nav_benefits: "Benefits", nav_about: "About", nav_destinations: "Destinations", nav_management: "Management", nav_apartments: "Apartments", nav_services: "Services", nav_contact: "Contact",
+        hero_title: "We manage your home like our own.",
+        hero_subtitle: "Bookings, guests and operations handled by us.<br>You get the return and a clear report.",
+        hero_btn1: "Request a free review", hero_btn2: "WhatsApp",
+        ben_title: "Why outsource your property management?", ben_sub: "Less admin for you. More control and clarity over your home.",
+        ben1_n: "Pricing", ben1_t: "Better positioned", ben1_d: "We adjust rates and calendars to improve occupancy and income.",
+        ben2_n: "Channels", ben2_t: "More visibility", ben2_d: "We list and sync your home on the main platforms.",
+        ben3_n: "Guests", ben3_t: "Direct support", ben3_d: "We handle bookings and issues so you don't have to stay on call.",
+        ben4_n: "Time", ben4_t: "Less paperwork", ben4_d: "We run the day-to-day and send you a clear report.",
+        about_title: "Who we are", about_sub: "Owners managing homes the way we manage our own.",
+        about_p1: "We are owners. We manage our own holiday homes and apply the same operation to the ones entrusted to us.",
+        about_p2: "We are not an agency with dozens of properties. We prefer a small portfolio, direct attention, and that you speak with the person who decides.",
+        about_p3: "We work in Garraf, Alt Penedès, Baix Penedès and Baix Llobregat (Catalonia), as well as Cantabria and Bizkaia. We handle listings, bookings, guest communication and, depending on the plan, check-in, cleaning and maintenance.",
+        about_p4: "If you want a large platform, there are other options. If you want your home managed with the same care as ours, let's talk.",
+        dest_title: "Our destinations", dest_sub: "Areas where we manage holiday homes",
+        mod_title: "Management plans", mod_sub: "Choose the service level that best fits your property",
+        mod_basic: "Basic", mod_basic_p: "Essential management", mod_b1: "Listing on platforms", mod_b2: "Booking management", mod_b3: "Synced calendar", mod_b4: "Basic online guest support",
+        mod_std: "Standard", mod_std_p: "Most popular", mod_s1: "Everything in Basic", mod_s2: "Check-in / Check-out", mod_s3: "Professional cleaning", mod_s4: "Price optimisation", mod_s5: "Full guest communication",
+        mod_prem: "Premium", mod_prem_p: "Full-service", mod_p1: "Everything in Standard", mod_p2: "Preventive maintenance", mod_p3: "Professional photography", mod_p4: "Monthly reporting", mod_p5: "Priority 24/7 support", mod_p6: "Premium linens",
+        apt_title: "Homes we already manage", apt_sub: "We started with our own properties. This is the operation we will apply to yours.",
+        apt1_t: "Sitges Apartment", apt1_d: "Apartment in Sitges", apt2_t: "Village house in Sant Pere de Ribes", apt2_d: "Village house in the old town of Sant Pere de Ribes", apt3_t: "Farmhouse in Les Garrigues", apt3_d: "Sustainable rustic farmhouse in Les Garrigues",
+        proof_title: "Real results example", proof_specs: "Sitges Apartment · 4 bedrooms · up to 7 guests · 150 m²", proof_r1: "4.87/5 Airbnb (53 reviews)", proof_r1c: "Check-in 5.0 · Communication 4.9", proof_r2: "9.2/10 Booking (37 reviews)", proof_r2c: "Staff 9.6 · Comfort 9.5", proof_q1: "“The manager welcomed us very warmly and made everything easy. We will be back.”", proof_q2: "“The host was kind and attentive.”", proof_q3: "“The host was very punctual and helpful at all times. An excellent and honest host.”",
+        serv_title: "What we take care of", serv_sub: "Day-to-day operations, so you don't have to stay on top of them",
+        serv1_t: "Full management", serv1_d: "Complete administration of your property.", serv2_t: "Bookings", serv2_d: "Price and occupancy optimisation.", serv3_t: "Guest support", serv3_d: "Professional communication 24/7.", serv4_t: "Maintenance", serv4_d: "Cleaning and preventive maintenance.", serv5_t: "In-house laundry", serv5_d: "Our own professional laundry service.",
+        con_title: "Request a free review", con_sub: "We reply within 24 hours",
+        con_text: "Tell us the area of your home, whether it is licensed and whether it is already listed. We will tell you what can be improved and which plan fits best, with no obligation.",
+        con_phone: "Phone", con_wa: "Send message", footer_tag: "We manage your home like our own",
+        footer_legal: "Legal notice", footer_privacy: "Privacy", footer_cookies: "Cookies"
+      }
+    };
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+      });
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); mainNav.classList.toggle('open'); });
+    mainNav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { menuToggle.classList.remove('active'); mainNav.classList.remove('open'); }); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 900) { menuToggle.classList.remove('active'); mainNav.classList.remove('open'); } });
+  </script>
+</body>
+</html>
