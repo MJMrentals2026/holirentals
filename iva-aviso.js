@@ -2,6 +2,7 @@
    - 'franja': franja fija arriba (portada ES/EN y calculadora), se puede cerrar.
    - 'cinta': cinta diagonal sobre la portada ES/EN que se funde y desaparece sola a los ~4 s; tocarla lleva a la calculadora.
    La variante publicada es MODO. Para probar la otra sin cambiar nada: ?iva25=franja o ?iva25=cinta en la URL.
+   En modo 'cinta', al terminar queda un botón flotante dorado en el lateral derecho que lleva a la calculadora.
    No usa cookies; el cierre o el pase de la cinta se recuerda solo durante la sesión (sessionStorage). */
 (function () {
   var MODO = 'cinta';
@@ -9,7 +10,6 @@
   var forzado = !!m;
   if (m) MODO = m[1];
   var KEY = 'iva25-' + MODO;
-  try { if (!forzado && sessionStorage.getItem(KEY)) return; } catch (e) {}
   var path = location.pathname;
   var en = (document.documentElement.lang || '').slice(0, 2) === 'en';
   var isCalc = path.indexOf('/calculadora') === 0;
@@ -20,6 +20,24 @@
     msg: 'Desde el 1 de diciembre los pisos turísticos pagan un 10 % de IVA. ¿Sabes cómo afecta a tu rentabilidad?',
     cta: 'Pide tu análisis gratuito', href: isCalc ? '#valora' : '/calculadora/', close: 'Cerrar aviso', label: 'Aviso IVA'
   };
+  t.tab = en ? '10% VAT: how does it affect you?' : 'IVA 10 %: ¿cómo te afecta?';
+  var visto = false;
+  try { visto = !forzado && !!sessionStorage.getItem(KEY); } catch (e) {}
+  /* Botón flotante dorado en el lateral derecho (portada ES/EN), lleva a la calculadora. */
+  function boton() {
+    if (isCalc || document.getElementById('iva25b')) return;
+    var st = document.createElement('style');
+    st.textContent = '#iva25b{position:fixed;right:0;top:50%;z-index:999;transform:translateY(-50%);writing-mode:vertical-rl;background:#d4af37;color:#111;text-decoration:none;font:600 14px/1.2 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:16px 10px;border-radius:10px 0 0 10px;box-shadow:-3px 3px 14px rgba(0,0,0,.35);border:2px solid #111;border-right:0;animation:iva25b .5s ease}' +
+      '#iva25b:hover,#iva25b:focus-visible{background:#e6c34d;padding-right:14px}' +
+      '#iva25b span{transform:rotate(180deg);display:inline-block}' +
+      '@keyframes iva25b{from{opacity:0;right:-40px}to{opacity:1;right:0}}' +
+      '@media (max-width:600px){#iva25b{font-size:12px;padding:12px 7px}}' +
+      '@media (prefers-reduced-motion:reduce){#iva25b{animation:none}}';
+    document.head.appendChild(st);
+    var a = document.createElement('a'); a.id = 'iva25b'; a.href = '/calculadora/'; a.setAttribute('aria-label', t.msg);
+    var sp = document.createElement('span'); sp.textContent = t.tab; a.appendChild(sp);
+    document.body.appendChild(a);
+  }
   var css = '#iva25{position:fixed;top:0;left:0;right:0;z-index:2000;background:#d4af37;color:#111;font:500 14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.25)}' +
     '#iva25 .iva25-in{max-width:1200px;margin:0 auto;padding:10px 48px 10px 16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;text-align:center}' +
     '#iva25 a.iva25-cta{display:inline-block;background:#111;color:#d4af37;text-decoration:none;font-weight:600;padding:6px 14px;border-radius:999px;white-space:nowrap}' +
@@ -29,6 +47,7 @@
     '@media (max-width:600px){#iva25{font-size:13px}#iva25 .iva25-in{padding:8px 44px 8px 12px}}';
   function cinta() {
     if (isCalc) return; /* la cinta solo sale en la portada ES y EN */
+    if (visto) return boton(); /* ya vista en esta sesión: solo el botón */
     var dur = 4000;
     var css2 = '#iva25c{position:fixed;inset:0;z-index:2000;pointer-events:none;overflow:hidden;display:flex;align-items:center;justify-content:center}' +
       '#iva25c a{flex:none;box-sizing:border-box;pointer-events:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;width:160vmax;padding:16px calc((160vmax - min(80vw,880px)) / 2);background:#d4af37;color:#111;text-decoration:none;text-align:center;font:600 17px/1.35 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.45);border-top:2px solid #111;border-bottom:2px solid #111;transform:rotate(-12deg);animation:iva25c ' + dur + 'ms ease forwards}' +
@@ -45,10 +64,11 @@
     a.appendChild(sp); a.appendChild(b); box.appendChild(a);
     document.body.appendChild(box);
     try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
-    setTimeout(function () { box.remove(); }, dur + 100);
+    setTimeout(function () { box.remove(); boton(); }, dur + 100);
   }
   function init() {
     if (MODO === 'cinta') return cinta();
+    if (visto) return;
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
     var bar = document.createElement('div');
     bar.id = 'iva25'; bar.setAttribute('role', 'region'); bar.setAttribute('aria-label', t.label);
