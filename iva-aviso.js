@@ -4,7 +4,7 @@
    La variante publicada es MODO. Para probar la otra sin cambiar nada: ?iva25=franja o ?iva25=cinta en la URL.
    No usa cookies; el cierre o el pase de la cinta se recuerda solo durante la sesión (sessionStorage). */
 (function () {
-  var MODO = 'franja';
+  var MODO = 'cinta';
   var m = /[?&]iva25=(franja|cinta)/.exec(location.search);
   var forzado = !!m;
   if (m) MODO = m[1];
