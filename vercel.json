@@ -1,9 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.holirentals.com" }],
-      "destination": "https://holirentals.com/:path*",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.holirentals.com"
+        }
+      ],
+      "destination": "https://holirentals.com/$1",
       "permanent": true
     }
   ]
